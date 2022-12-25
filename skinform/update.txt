@@ -1,0 +1,22 @@
+Thanks for using TSkinForm.
+This is the newest version - v2.12
+
+v2.12
+=====
+	1. Fixed bugs of SetDisplayText in Windows 2000/NT
+        2. Make it Delphi 3 compatible
+        3. Rebuild Help with Help & Manual
+
+v2.11
+=====
+	1. Fixed bugs of vertical trackbar
+	2. Update the demo program, "SetDisplayText","SetTrackBarMinMax" now work well
+
+v2.1
+====
+	First release as a shareware
+	
+
+~v2.0
+=====
+	Free version

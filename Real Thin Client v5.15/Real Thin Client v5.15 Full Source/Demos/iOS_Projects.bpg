@@ -1,0 +1,34 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = iosFile_Client.exe \
+           iosAppClient.exe \
+           iosAppServer.exe \
+           iosTestClient.exe \
+           iosTestClient2.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+iosFile_Client.exe: File_Client\iosFile_Client.dpr
+  $(DCC)
+
+iosAppClient.exe: App_Client\iosAppClient.dpr
+  $(DCC)
+
+iosAppServer.exe: App_Server\iosAppServer.dpr
+  $(DCC)
+
+iosTestClient.exe: DB_Access\iosTestClient.dpr
+  $(DCC)
+
+iosTestClient2.exe: DB_Access\iosTestClient2.dpr
+  $(DCC)

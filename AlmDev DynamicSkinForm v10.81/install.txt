@@ -1,0 +1,17 @@
+For Delphi 5, 6, 7, 2005, 2006, 2007, 2009, 2010:
+
+ - open *.dpk file
+ - install package
+
+For C++Builder 5, 6:
+
+ - open *.bpk file
+ - install package
+
+For C++Builder 2006[2007, 2009, 2010]:
+
+ - open *.bdsproj file
+ - install package
+
+See dsfsb.zip with SkinBuilder sources.
+

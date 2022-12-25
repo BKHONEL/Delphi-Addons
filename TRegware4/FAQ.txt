@@ -1,0 +1,104 @@
+TRegware Shareware Security Component for Delphi 
+Version 4.00
+Copyright ©2003 - WAK Productions
+------------------------------------------------
+Programmed by Winston Kotzan
+Email: wak@wakproductions.com
+Website URL: http://www.wakproductions.com/
+
+
+
+Frequently Asked Questions
+(All Versions)
+--------------------------
+
+1) How do I install the TRegware component into Delphi?
+
+Before you can use TRegware (or the included Demo program), you will have to
+install TRegware into Delphi.  Here are the installation instructions:
+
+1. If you are using Delphi 5 or higher, open the file "wreg400_D5.dpk".  
+
+*Only if you are using a version below Delphi 5, you will have to create this package.  Go to File menu->"New" and select Package.  When the package screen appears, add the following files:
+-tregware_register.pas
+-regware4.pas
+-reggen4.pas
+
+2. Click "Install".
+3. The components TRegware4 and TRegCodeGenerator4 should appear on the component palette under the tab labeled "WAK". 
+
+
+2) How do I use the two TRegware components?
+
+TRegware4 - This is the component you use in your shareware program.  It handles the user registration and time limit functions.  This component does not have the ability to create registration codes for security purposes.  Instead, use the TRegwareCodeGenerator4 component to create registration codes.
+
+TRegCodeGenerator4 - Use this component to generate registration codes.  It can be used to create your own registration code generator program.  It is separate from the TRegware4 component for security purposes.  Do not include this component in your shareware program.
+
+
+3) Before I get started, what important properties should I set?
+
+Here are the critical properties that should be unique for each program you make that
+uses TRegware:
+
+ProgGUID - set this value to a GUID string.  You can hit 'Ctrl + Shift + G' in the Delphi code editor to generate a new ProgGUID.  Copy and paste the value to the object inspector.  However, leave off the additional ['brackets'], so the ProgGUID should look like this:
+
+	{9C066FA1-891E-11D6-8FF8-0040D005E5DC}
+
+  ...without any additional characters.  TRegware will use ProgGUID to store its information in the registry under the registry key:
+
+HKLM\Software\CLASSES\CLSID\ ProgGUID \Info    (Windows 9x/Me)
+HKCR\CLSID\ ProgGUID \Info  		       (Windows NT/XP)
+
+
+Seed1, Seed2, Seed3 - set these values to different numbers between 0 and 2147483648.  These values exist so that different programs will have different registration codes.
+
+
+An easy way to generate the above values is to use the Demo #1 program included with the TRegware distribution.
+
+
+4) How do I generate registration codes (a.k.a. serial numbers, regkeys, etc.)?
+
+To generate a registration code, you will either have to create your own keygenerator with TRegCodeGenerator or use the Perl script to make registration codes on your web server.  The GenerateCode() method returns the registration code for any string passed to it.  This documentation refers to that string as LicenseID.  You can think of the registration code as the TRegware "password" for any given LicenseID.
+
+The registration code is calculated by:
+
+LicenseID + [algorithm] --> Registration Code
+  
+
+5) How do I determine if the program is registered?
+
+During the operation of your program, there are two properties you can use to determine the status of the program.  The TRegware4.Registered property lets you know if the program has been registered.  The Expired property tells you if the program has expired.  It is up to your program to check these values at startup and determine what to do.  You may decide to show a message explaining to the user that they have not registered, etc.  See demo #2 for an example.
+
+6) What do you mean by "registered"?
+
+Registering is another way of saying "to purchase a shareware program".  Usually, registration involves the user paying for the shareware program in return for a "registration code" or "serial" number that can be entered into the program.  This registration code will then allow the user to legally keep the program on his computer.  Many shareware authors include "timebombs" in their program, which prevent the program from functioning if it has not been registered after a certain number of days.  TRegware is a Delphi component that simplifies the registration process for the programmer and also allows the implementation of a timebomb.
+
+
+7) If a user purchases my software, how will he register the program?
+
+When the user is ready to register the program, use the DoRegistration() method, which registers the program.  The three main parameters passed to DoRegistration() are called LicenseID, Organization, and RegCode.  The LicenseID parameter for DoRegistration() is the LicenseID. 
+
+DoRegistration() returns true if RegCode is the correct registration code for LicenseName (See question #1).  The program will then be registered, and the Registered property will report true.  Also, the LicenseID property will become drLicenseID.  DoRegistration() returns false if the RegCode parameter is incorrect for LicenseName.  If you are using TRegware Professional, DoRegistration() will also return false if server verification has failed or if RegNotifyRequired is true and server notification has failed.  See the "Professional Version FAQ" for more about the web server options.
+
+
+8) What is in reg_opts400.pas?
+
+reg_opts400.pas is a file with compiler directives and constants for TRegware.  Inside the file is a description of each item.  It is recommended that you change these values from their default settings.  But remember to backup the file, because the registration codes will be affected by changing these values!
+
+9) How do I use the included Perl script (regware.pl) on my server?
+
+The Perl script is intended to be used as a "module" that you can integrate into your customized order system.  To use regware.pl, include it in your unit like this:
+
+     require 'regware4gen.pl';
+
+Then to generate a registration code, create an object and use it like this:
+
+  $regobj = new Regware($Seed1, $Seed2, $Seed3);
+  my($RegCode) = $regobj->GenerateCode($LicenseID, $ExpireDays);
+
+$RegCode is the registration code for $LicenseID. $LicenseID, $Seed, and $RegCodeSize correspond to their respective properties in the TRegware Delphi component.
+
+For a more detailed description, view the documentation in the files regware4gen.pl and regware_example.pl.
+
+
+

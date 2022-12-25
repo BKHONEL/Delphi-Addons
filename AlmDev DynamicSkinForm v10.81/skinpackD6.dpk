@@ -1,0 +1,69 @@
+package skinpackD6;
+
+{$R *.res}
+{$R 'spreg.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'DynamicSkinForm VCL'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  designide,
+  vcl,
+  vcljpg;
+
+contains
+  SPUtils in 'SPUtils.pas',
+  SkinBoxCtrls in 'SkinBoxCtrls.pas',
+  SkinCtrls in 'SkinCtrls.pas',
+  SkinData in 'SkinData.pas',
+  SkinGrids in 'SkinGrids.pas',
+  SkinHint in 'SkinHint.pas',
+  SkinMenus in 'SkinMenus.pas',
+  SkinTabs in 'SkinTabs.pas',
+  SPEffBmp in 'SPEffBmp.pas',
+  spreg in 'spreg.pas',
+  DynamicSkinForm in 'DynamicSkinForm.pas',
+  spTrayIcon in 'spTrayIcon.pas',
+  spSkinZip in 'spSkinZip.pas',
+  spSkinUnZip in 'spSkinUnZip.pas',
+  spMessages in 'spMessages.pas',
+  spfilectrl in 'spfilectrl.pas',
+  spSkinShellCtrls in 'spSkinShellCtrls.pas',
+  spzlib in 'spzlib.pas',
+  spNBPagesEditor in 'spNBPagesEditor.pas' {spNBPagesForm},
+  spcalendar in 'spcalendar.pas',
+  spColorCtrls in 'spColorCtrls.pas',
+  spDialogs in 'spDialogs.pas',
+  spzlibcompress in 'spzlibcompress.pas',
+  spconst in 'spconst.pas',
+  spRootEdit in 'spRootEdit.pas' {spRootPathEditDlg},
+  SkinPrinter in 'SkinPrinter.pas',
+  spButtonGroup in 'spbuttongroup.pas',
+  spCategoryButtons in 'spcategorybuttons.pas',
+  SkinExCtrls in 'SkinExCtrls.pas',
+  spPngImageEditor in 'spPngImageEditor.pas' {spPNGEditorForm},
+  sppngimagelist in 'sppngimagelist.pas',
+  sppngimage in 'sppngimage.pas';
+
+end.

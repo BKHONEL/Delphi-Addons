@@ -1,0 +1,20 @@
+Installation is quite easy:
+
+a.Load Delphi
+b.Choose "Component" from the menu
+c.Then Choose "Install Component"
+d.Click "Add" button and browse for the SkinForm.DCU file and install it
+e.The component should now be on the component palette under the "Add On" Page
+
+
+NOTE:
+In Delphi 5, if a "line too long" problem occured, please don't mind, 
+it's because Delphi 5 try to open the .dcu like a source code, close 
+the source form and recompile to bypass or add the DCU file manually 
+to a .dpk file.
+
+We prepared the TSkinForm.dpk for using, if your don't like, you can 
+add the DCU file to dclusr50.dpk file.
+
+The sample source code is for delphi 5, if you are using Delphi 3 or
+Delphi 4, please replace the source files in delphi3&4samples.zip

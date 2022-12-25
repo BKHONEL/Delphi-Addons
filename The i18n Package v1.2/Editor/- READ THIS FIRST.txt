@@ -1,0 +1,18 @@
+It is unnecessary to compile i18nEditor, because i18nEditor.exe is already in 
+the 'Bin' folder.  This binary is compiled  using the 30 day trial version of 
+Delphi XE3.
+
+However, if you prefer to build the binary yourself, before opening i18nEditor 
+inside Delphi, you must install the Shell Controls package. The Shell Controls 
+package is one of the demo packages of Delphi. You can find the Shell Controls
+package at the following locations:
+
+    Delphi 2010:
+    {PUBLIC DOCUMENTS}\RAD Studio\7.0\Demos\DelphiWin32\VCLWin32\ShellControls
+
+    Delphi XE2:
+    {PUBLIC DOCUMENTS}\RAD Studio\10.0\Samples\Delphi\VCL\ShellControls
+
+    Delphi XE3
+    {PUBLIC DOCUMENTS}\RAD Studio\10.0\Samples\Delphi\VCL\ShellControls
+

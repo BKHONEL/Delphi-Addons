@@ -1,0 +1,45 @@
+package sfd7;
+
+{$R *.res}
+{$R 'sf_flashreg.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'SmartFlash VCL'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl,
+  designide,
+  vclactnband,
+  vclx,
+  visualclx,
+  vcljpg;
+
+contains
+  sf_winapi in 'sf_winapi.pas',
+  sf_bitmap in 'sf_bitmap.pas',
+  sf_flash in 'sf_flash.pas',
+  sf_flashreg in 'sf_flashreg.pas',
+  sf_utils in 'sf_utils.pas';
+
+end.

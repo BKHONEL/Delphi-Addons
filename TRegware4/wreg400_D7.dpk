@@ -1,0 +1,38 @@
+package wreg400_D7;
+
+{$R *.res}
+{$R 'regware4.dcr'}
+{$R 'reggen4.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS ON}
+{$RANGECHECKS ON}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'TRegware 4.00'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl;
+
+contains
+  regware4 in 'regware4.pas',
+  reggen4 in 'reggen4.pas',
+  tregware_register in 'tregware_register.pas';
+
+end.

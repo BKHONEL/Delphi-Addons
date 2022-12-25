@@ -1,0 +1,810 @@
+AlphaControls :: history
+
+01.07.2013 AlphaControls v8.41 Stable released
+
+  * Improved drawing of TsListView rows
+  * Added support of the TsImage.SkinData.SkinSection property 
+  * Solved issue in the TsLabelFX when compiled with TntUnicode key
+  * Added AlphaDB project files for Delphi XE4  
+  * Added new "Steam II" and "GPlus" skins
+
+15.06.2013 AlphaControls v8.40 Stable released
+
+  * Improved drawing of TsNotebook component
+  * Improved drawing of selected row in the TsListView
+  * Improved drawing of the TsSlider component without skins
+  * Fixed two errors in TsSpinEdit and TsTreeView components
+
+05.06.2013 AlphaControls v8.35 Beta released
+
+  * Solved issue with changing of TsTreeView color then SkinData.CustomColor is True
+  * Improved behaviour of right-aligned TsLabelFX
+  * Improved refreshing of TsPageControl when ActivePage is not defined
+  * Many improvements in the TsSlider component, added BoundLabel, ShowCaption, OnChanging properties
+  * Improved aligning of skinned Alpha Hints when borders are out of screen bounds
+
+27.05.2013 AlphaControls v8.34 Beta released
+
+  * Solved problem with using OnBeforeNavigate2 event in the TWebBrowser component
+  * Improved redrawing of scrolls after MouseWheel in TsScrollBox in standard mode
+  * Added new PlainCaption property in the TsHTMLLabel component
+  * Improved calculation of skinned hints sizes
+  * Minor improvements
+
+20.05.2013 AlphaControls v8.33 Beta released
+
+  * Improvements in the TsToolBar, TsCoolBar and TsPageControl drawing in Delphi XE3-XE4
+  * Improved drawing of the TsOpenPictureDialog
+  * Improved drawing of hints when HtmlMode is off
+  * Added new TsHTMLLabel component
+  * Many minor bugfixes and improvements
+
+10.05.2013 AlphaControls v8.32 Beta released
+
+  * Added support of RAD Studio XE4
+  * Improved refreshing in TsScrollBox, TsPanel and frames
+  * Added support of AutoSize property when WordWrap is True in TsCheckBox and TsRadioButton
+  * Added WordWrap property in the TsSpeedButton
+  * Some improvements in the TsFrameBar items aligning
+  * Solved problem with changing of TsLabelFX position
+
+27.03.2013 AlphaControls v8.31 Beta released
+
+  * Improved drawing of items with custom colors in TsListView
+  * Solved problem with "Replace" button in ImageList editor
+  * Solved all known issues in the skin-engine
+  * Solved autosizing issue in the TsImage component
+  * Improved drawing of TsComboBoxEx with csExSimple Style
+  * Published new "FM" skin
+  * Many minor improvements
+
+21.03.2013 AlphaControls v8.30 Beta released
+
+  * Added new TsImage component
+  * Added new TsSlider component
+  * Added new TacComboEditEx component (acExtra package)
+  * Added TsSkinManager.Palette array with main skin colors
+  * Improvements in skinning of the TDBGridEh control
+  * Improved caching of controls images
+  * Color of drawn skinned TsLabel changed without changing of Font.Color property
+  * Added TsLabelFX.Angle property
+  * Many minor improvements
+
+01.03.2013 AlphaControls v8.20 Stable released
+
+  * Small improvements in support of standard MaskEdit
+  * Removed a glitch in opened ComboBox when skin is changed
+  * Improved scrolling in virtual treeview
+  * Improved work from keyboard in the popup calculator (TsCalcEdit)
+  * Improvement in TsSpeedButton refreshing when parent is resized  
+  * Fixed error which occurs sometimes in application runned under Windows XP
+
+21.02.2013 AlphaControls v8.19 Stable released
+
+  * Improved support of the TSpeedButton and TScrollBox controls
+  * Solved few issues with refreshing of controls placed on a skinned form
+  * Improved support of icons in Bitmap format in the TsAlphaImageList component
+  * Improved animation of hiding of form
+
+12.02.2013 AlphaControls v8.18 Stable released
+
+  * Small improvements in drawing of components
+  * Solved issue with showing of Ico in AlphaImageList component
+  * Solvled issue with autohiding of TacCheckComboBox popup window
+  * Updated icons in components palette
+
+04.02.2013 AlphaControls v8.17 Stable released
+
+  * Improved drawing of glyphs in TsToolBar
+  * Improved support of the THTMLViewer component
+  * Solved issue with clicking in popup calculator
+  * Solved issue with glowing effect
+  * Many minor improvements
+  * Published the new "Matrix" skin
+
+24.01.2013 AlphaControls v8.16 Stable released
+
+  * Fixed error in animation of forms showing
+  * Added support of the SkinProvider.OnAfterAnimation event after a form hiding
+  * Improved hover effect and autosizing of title items in the TsTitleBar component
+  * Improved refresh of the TsPageControl component
+  * Solved problem with installing with old DevEx packages
+  * Many minor improvements
+  * Published the new "AlterMetro" skin
+
+17.01.2013 AlphaControls v8.15 Stable released
+
+  * Improved support of the TScrollBox, TPanel and TToolBar components
+  * Improved animation of forms showing and hiding
+  * Improved redrawing of controls with transparency
+  * Fixed error in the TsScrollBar when switched to non-skinned mode
+  * Improved drawing of TsCustomComboBoxEx when style is csExSimple
+  * A lot of minor improvements
+  * Published the new "Lunar base" skin
+
+27.12.2012 AlphaControls v8.14 Stable released
+
+  * Solved issue with TsDateEdit component
+  * Removed a memory leak in the TsVirtualImageList
+  * Improvements in components drawing
+
+21.12.2012 AlphaControls v8.13 Stable released
+
+  * Improved drawing of text in menus
+  * Solved problem with support of TntUnicodeControls
+  * In the TsAlphaImageList added the UseCache property and MoveItem procedure
+  * In the TsVirtualImageList added the UseCache property
+  * Improved drawing of transparent panel
+  * Added support of the Flat property in the TsToolBar
+  * Improved autosizing of items in the TsTitleBar component
+  * Updated most demo-apps              
+
+14.12.2012 AlphaControls v8.12 Stable released
+
+  * Fixed error of panels repainting
+  * Solved problem of focusing after system dialogs showing
+  * Fixed redrawing of disabled grids and memos    
+  * Fixed other small errors
+
+12.12.2012 AlphaControls v8.11 Stable released
+
+  * Added new TsVirtualImageList component
+  * Improved support of system menu in the TsSkinProvider component
+  * Improved drawing of disabled edit controls
+  * Improved drawing of standard ToolBar
+  * TsTitleBar.Items.Alignment property is removed, added the TsTitleBar.Items.Align property
+  * Supported latest DevEx version
+  * Improved behaviour of popup calendar
+
+27.11.2012 AlphaControls v8.10 Stable released
+
+  * Added SysSubMenu property in the TsSkinProvider component
+  * Added new aligning type (taCenterInSpace) for title items in TsTitleBar
+  * Improvements in the TWebBrowser support
+  * Small bugfixes and improvements
+
+15.11.2012 AlphaControls v8.04 Beta released
+
+  * Fixed error in closing of app when DevEx controls are skinned
+  * Improved drawing of TsFXLabel with shadow, added Shadow.AlphaValue property
+  * Support of TWebBrowser is disabled by definition in the sDefs.inc file
+  * Added DrawClientArea property in the TsSkinProvider
+  * Added support of multi-line menu items
+  * Improved work of the TacTitleBar component
+  * Published new "Mint" skin
+  * A lot of minor improvements and bugfixes
+    
+26.10.2012 AlphaControls v8.03 Beta released
+
+  * Added OnFrameShow event in the sFrameBar items
+  * Solved problem with black rectangles on TsTabSheets (refresh problem)
+  * Added support of the TWebBrowser component
+  * Improved painting of scrolls
+  * Improved behavior of glowing effect
+  * Published new "Zest" skin
+  * Many minor improvements
+
+12.10.2012 AlphaControls v8.02 Beta released
+
+  * Improved drawing of TsCheckListBox items when RTL is True
+  * Added new TsSkinManager.OnSysDlgInit event, occurs when sys dialog is skinned
+  * Added new readonly TsAlphaHints.IsHintShowing property
+  * Many improvements in Html parser, added support of special characters
+  * Added new TsGauge.OnPaintText event
+  * Added new TsTrackBar.BarOffsetV and TsTrackBar.BarOffsetH properties
+  * Improved design-editors for the TsTitleBar component
+  * Added the VerticalAlign property and OnValueChanged event in the TsCheckBox and TsRadioButtons components
+  * Added TsSkinProvider.TitleBar property
+  * Improved behavior of the TsTitleBar component
+  * Added the TsFrameBar.ActiveFrameIndex property and TsFrameBar.Items.OnDestroy event
+  * Added new OnMeasureItem, OnBeginColumnResize, OnEndColumnResize and OnColumnResize events in the TsListView
+  * Added new "Subway" skin (by Graf Sascha)
+  * Updated all skins
+    
+03.10.2012 AlphaControls 2013 (v8.01) Beta released
+
+  * Solved problem with drawing in design-time when standard controls placed to the TsTabSheet
+  * Added checking of empty alpha-channels in glyphs (enable the sConst.ac_CheckEmptyAlpha option)
+  * Fixed error of working "Backspace" and "Delete" keys in SpinEdits when control is ReadOnly
+  * Added predefined JVCL types into SkinManager.ThirdParty list
+  * Solved problem with lost Png images  
+  * Improved skinning of standard TScrollBar control
+  * Some minor improvements          
+
+27.09.2012 AlphaControls 2013 (v8.00) Beta released
+
+  * Added support of 64-bit compilers
+  * Added new TsTitleBar component (buttons, tabs and other elements in a form title when AlphaSkins are Active)
+  * Added new TsSkinProvider.TitleIcon.Visible property  
+  * Popup calendar and calculator are shown without activating
+  * Added support of fourth state (Default button) in buttons
+  * Added many new graphic procedures for drawing on bitmap with alpha-layer
+  * Removed some deprecated properties and procedures with saving of backward compatibility
+  * A lot of improvements and optimizations in the code
+  * Added new "Black box" skin (by Graf Sascha)            
+
+23.09.2012 AlphaControls v7.70 Stable released
+
+  * Improved text drawing in TsButton when skins are disabled
+  * Solved issue with glowing in buttons when they moved by mouse wheeling
+  * Solved issue with mouse wheeling in the TsListbox
+  * Added new TsSkinManager.OnGetPopupItemData event for menu items customization
+  * Solved issue with a forms resizing
+  * Added support of the RAD Studio XE3 x32
+
+11.09.2012 AlphaControls v7.69 Stable released
+
+  * Fixed error which occurs sometimes when form is closed and glowing is visible
+  * Latest QuantumGrid is supported
+  * Fixed error with Ctrl-C/Ctrl-V in the alpha color dialog
+  * Improved refreshing after a font changing in the TsComboBox
+  * Added ShowFocus property in the TsRadioGroup   
+  * Improved a custom items drawing in the TsListView
+  * Solved problem which occurs sometimes after a window restoring     
+  * Improved drawing of TsSpeedButton which themed by OS        
+  * Published new "iOS dark" skin  
+
+14.08.2012 AlphaControls v7.68 Stable released
+
+  * Improved drawing of multi-line text in standard buttons
+  * Fixed error which occurs in TsComboBox under Delphi 5
+  * Solved issue of blinking in the TsScrollBar component
+  * Solved issue of maximizing in MDI child windows
+  * Improved work of the TForm.OnPaint event
+  * Improved drawing of borders in forms with bsSingle BorderStyle when ExtBorders is False
+  * Solved issue with ShowSpinButtons property in SpinEdits
+  * Improved behavior of the Customizable property in the TsToolBar
+  * Improved focusing of the TsTrackBar component
+  * Added OnActivate and OnDeactivate events in the TsSkinManager component  
+  * Added new "FlatLine" skin by Graf Sascha
+
+13.07.2012 AlphaControls v7.67 Stable released
+
+  * Some improvements in a forms minimizing process
+  * Solved problems with switching of tabsheets by "Ctrl+Tab"
+  * Solved problem with showing of modal dialogs from modal windows
+  * Solved problem with scaling of the TsComboBox component
+  * Added new "Toxic" skin by Graf Sascha
+  * Minor bufixes and improvements
+
+24.06.2012 AlphaControls v7.66 Stable released
+
+  * Solved issue with right-bottom grip in forms
+  * Solved issue with menu activating in maximized forms
+  * Improved drawing of sPageControl borders when TabPosition <> tpTop
+  * Improved drawing of standard semi-transparent PageControl
+  * Solved issue with ReadOnly property in SpinEdits
+  * Fixed error in the sCheckListBox if control is placed on a frame
+  * Improved receiving of Selection colors for DevExpress controls
+  * Added new "Windows 8" and "Android OS" skins by Graf Sascha
+
+26.05.2012 AlphaControls v7.65 Stable released
+
+  * Improved changing of focus in standard ComboBox
+  * Solved problem with Ctrl-C/Ctrl-V in the TsCalcEdit component
+  * Solved problem with a pages hiding and showing in the TsNotebook
+  * Improved custom drawing in the TsListView
+  * Was made the alphaDBBuilderXE2.bpk file for AlphaDB pack under Builder XE2 installing  
+  * Many minor improvements and bugfixes         
+
+14.04.2012 AlphaControls v7.64 Stable released
+
+  * Improved output of unicode text and drawing of standard scrolls in the TsListView
+  * Improved output of unicode text in the TsTreeView
+  * Improved drawing of texts in standard dialogs
+  * Improved redrawing after a focus changing in standard ComboBoxes
+  * Improved automatic support of child forms
+  * Fixed some troubles in main menus
+  * Fixed problem with standard scrolls in the TsScrollBox
+  * Published OnDblClick event in the TsPageControl
+  * Improved drawing of scaled TsComboBox component
+  
+02.04.2012 AlphaControls v7.63 Stable released
+
+  * Published dragging properties in the TsSpeedButton
+  * Published new "AutumnSky" skin
+  * Improved aligning of BoundLabels
+  * Solved an issue with refreshing of selected items in the TsShellTreeView
+  * Solved an issue with MinValue in the TsCurrencyEdit
+  * Improved an aligning to top of forms with extended borders
+  * Other little improvements
+
+14.03.2012 AlphaControls v7.62 Stable released
+
+  * Improved behaviour of the TsScrollBar component
+  * Fixed error in the TsPageControl when TabMenu mode used without skins
+  * Fixed error in the TsPageControl when captions are not visible without skins
+  * Improved drawing of custom glyphs in TsRadionButton and TsCheckBox      
+  * Added properties AllowNegative, ShowSpinButtons, NextTabControl, PrevTabControl in SpinEdits
+  * Improved compatibility of TRichViewEdit with skins
+  * Little improvements and bugfixes        
+
+25.02.2012 AlphaControls v7.61 Stable released
+
+  * Solved issue with scrolling by thumb in the TsDBLookupCombobox
+  * Improved a rendering of text in system dialogs
+  * Added support of the OnDrawTab event in the standard TPageControl
+  * Improved rendering of standard TStatusBar component
+  * Solved issue with a slow form moving under Windows XP
+  * Added new ac_NoExtBordersIfMax option (change this variable in the sConst.pas if maximized windows should not have extended borders)
+  * Improved a drawing of dragged items in TsListView
+  * Improved support of the MarqueeInterval property in the TsProgressBar
+  * Many small improvements and bugfixes
+  
+23.01.2012 AlphaControls v7.60 Stable released
+
+  * Improved drawing of bitmaps and texts in standard dialogs
+  * Solved problem with a forms minimizing
+  * Solved several minor issues      
+  * Added new "WOT" skin
+
+19.01.2012 AlphaControls v7.59 Stable released
+
+  * Solved issue with ReadOnly property in the TsComboBoxEx
+  * Improved drawing of the TsComboBoxEx under Windows XP
+  * Improved drawing of disabled TsButton when TntUnicode key is enabled
+  * Fixed error in destroying of standard TSpeedButton
+  * Returned drawing of multi-line text in the TsPanel
+  * Improved refresh of the TsPageControl when ActivePage is switched manually
+  * Added support of DevExpress v2.3
+  * Improved support of RTL in the TsEdit control               
+  * Solved problem with freezing of skinned form
+
+30.12.2011 AlphaControls v7.58 Stable released
+
+  * Solved issue with white extended borders in system dialogs
+  * Improved showing of popup menu in the TsMonthCalendar
+  * Improved updating of CheckBoxes and RadioButton sizes if AutoSize property is True
+  * Improved drawing of popup lists in comboboxes    
+
+22.12.2011 AlphaControls v7.57 Stable released
+
+  * Added support of unicode in hints when TNTUNICODE key is enabled
+  * Improved drawing of extended borders in dialogs
+  * Fixed error with invisible ComboBoxes created dynamically
+  * Solved problem with invisible buttons on TsToolBar
+  * Fixed error in ListBoxes when height or width is too small
+  * Minor improvements and bugfixes
+      
+09.12.2011 AlphaControls v7.56 Stable released
+
+  * Many improvements in showing of forms and dialogs 
+  * Improved showing of RTL main menu
+  * Added support of vertical alignment in the TsPanel
+  * Improved showing of formatted text in masked controls (TsCalcEdit and others)
+  * Added support of the OnDblClick event in the calendar
+  * Improved calculation of heights in comboboxes
+  * Improved scrolling of RTL listboxes
+  * Solved issue with unicode captions in the TsTabSheet
+  * A lot of minor improvements            
+      
+09.11.2011 AlphaControls v7.55 Stable released
+
+  * Solved issue with positioning of RTL main menu
+  * Improved calculating of week numbers in the TsMonthCalendar
+  * Improved drawing of the TsEdit control when BorderStyle is bsNone
+  * Improved drawing of items in the TsListView when checkboxes are shown
+  * Fixed error in the TsScrollBar component
+  * Solved problem with refresh of the TsPageControl component
+  * Many minor bugfixes and improvements
+     
+19.10.2011 AlphaControls v7.54 Stable released
+
+  * Fixed error with WindowMenu
+  * Added new TsSkinManager.Effects.AllowBluring property
+  * Added support of the C++Builder XE2  
+     
+17.10.2011 AlphaControls v7.53 Stable released
+
+  * Some optimizations in using of memory
+  * Improved input in the TsDateEdit component
+  * Added support of the Aero bluring in extended borders
+  * Added the new "Web2" skin
+  * Small bugfixes
+     
+11.10.2011 AlphaControls v7.52 Stable released
+
+  * Improved drawing of TsListView items when columns are resized
+  * Fixed error in clicking of TsSpeedButton when control is not skinned
+  * Fixed problem with slow minimizing/restoring of windows
+  * Many small improvements
+
+30.09.2011 AlphaControls v7.51 Stable released
+
+  * Added support of Embarcadero DelphiXE2 in 32-bit mode
+  * Added skinning of TUpDown and TScrollBox components (UpDownBtn and ScrollControl types of skinning in the ThirdParty list)
+  * Solved problems with skinning in DevEx controls
+  * Improved work of ExtendedBorders property under Vista/Win7 without Aero
+  * Many small bugfixes
+
+12.09.2011 AlphaControls v7.50 Stable released
+
+  * Improved refresh of TsStatusBar after SimpleText changing
+  * Improved drawing of items in the TsListBox when component is not skinned
+  * Improved support of DevExpress vol 1.6, added support of editors
+  * Removed blinking in standard ComboBox when mouse moved over control
+  + Added IsModal parameter in the TsCalculator.Execute procedure
+  + Added new Afterburner and DeepPurple skins
+
+01.09.2011 AlphaControls v7.48 Beta released
+
+  * Solved issue with horizontal scrolling in TsCheckListBox
+  * Solved some problems in controls and forms initialization
+  * Added support of the TextHint property in ComboEdits
+  * Solved problem with unicode in the TsLabelFX
+  * Improved drawing of wrapped text in sListView items (vsIcon style)
+  * Improved calculation of week numbers in the TsMonthCalendar component
+  * Added support of the TabSkin property in the TsPageControl component (when TabType <> ttTab)
+  * Improved work of the SkinManager.AnimEffects.BlendOfMove property under Windows XP
+
+25.07.2011 AlphaControls v7.47 Beta released
+
+  * Fixed an error in skinned popup menu
+  * Improved changing of TsCheckBox and TsDBCheckBox components
+  * Improved calculation of ItemHeight in the TsCustomColorBox
+  * Improved work of the AutoSize property in the TsLabelFX
+  * Improved work of the OnTabMouseLeave event in the TsPageControl
+  * Improved repainting of the TsPageControl after the Enabled property changing
+  + Added support of the DeveloperExpress version 2011 (DEVEX2011 key)
+  * Minor improvements and bugfixes
+
+15.07.2011 AlphaControls v7.46 Beta released
+
+  * Improved showing of popup menus
+  * Solved issue with refreshing of controls placed on frames
+  * Improved drawing of TsListBox with horizontal scrolling
+  + Added possibility of dynamic changing of information in hints with TsAlphaHints component, a demo program with animation in hints was uploaded and available on the page with demo apps
+  + Added support of DIALOGTITLE skin section
+  + Added CaptionWidth property in the TsGroupBox component
+  + Added AccessibleDisabledPages property in the TsPageControl component
+  + Added OnSkinListChanged event in the TsSkinManager component
+  + Added MenuSupport.AlphaBlend property in the TsSkinManager component
+  + Released new "MetroUI" skin 
+  * Minor improvements and bugfixes
+
+29.06.2011 AlphaControls v7.45 Beta released
+
+  * Improved behaviour of skinned forms
+  * Solved problem with skinned semitransparent hints
+  * Improved support of the SkinSection property in the TsLabelFX component
+  * Improved support of BlendOnMoving property under Aero
+  * Mouse wheel is supported in the TsTimePicker
+  * Up and Down keys are supported in the TsDateTime component
+  + In the BoundLabel property were added new layouts : sclLeftTop, sclBottomLeft, sclBottomCenter and sclBottomRight
+  + The CaptionMargin property was added in the TsGroupBox and TsRadioGroup
+  + Added support of new MENUCAPTION section
+  * Minor improvements and bugfixes
+
+20.06.2011 AlphaControls v7.44 Beta released
+
+  * Added support of DropDownMenu property and bsSplitButton style in the TsButton
+  + Added new "Moonlight" skin
+  * Many minor improvements and bugfixes
+
+08.06.2011 AlphaControls v7.43 Beta released
+
+  * Improved support of RightToLeft reading in skinned hints, forms, Popup menus and sListBox
+  * Improved support of Woll2Woll grids
+  * Improved items drawing in sListBoxes  
+  * Improved drawing of buttons in Combo controls (TsDateEdit and others)  
+  * Improved drawing of non-skinned controls which are placed to skinned TsPanel
+  * Improved drawing of ExtraLine in menus under Aero  
+  + TSRVPageScroll added into ThirdParty predefined list
+  + Added OnTabMouseEnter and OnTabMouseLeave events in the TsPageControl component
+  + Added AllowAnimation property in the TsSkinProvider component  
+  * Many minor improvements and bugfixes
+
+22.05.2011 AlphaControls v7.42 Beta released
+
+  * In some edit controls was added a support of transparency (if not focused)
+  * Improved painting of buttons backgrounds in spinedits
+  * Many improvements in the TsListView items drawing  
+  * Hints may be drawn with using of borders only, if transparency is 100
+  * Headers of the TDBGridEh are not drawn with XP themes when skinned   
+  * Improved drawing of TsSpeedButton if ButtonStyle is tbsDropDown
+  * New OnChanging event was renamed to OnPageChanging in the TsPageControl component
+  * Improved painting and fixed some errors in the TsPageControl component
+  * Fixed error in closing popup calendar if TsDateEdit is not visible
+  * Added support of the HideSelection in the TsTreeView component
+  * Improved drawing of main menu line
+  * Solved some issues in MDI forms using  
+  + Added TsPageControl.TabPadding property  
+  + Added new "WEB" skin
+  * A lot of minor improvements
+
+15.04.2011 AlphaControls v7.41 Beta released
+
+  * Solved important issue with skinned forms deactivation
+  * Fixed error in TsPageControls without active page
+  * Several improvements in the TsPageControl component
+
+14.04.2011 AlphaControls v7.40 Beta released
+
+  * Big improvements in the TsAlphaImageList component, painting of scaled PNG glyphs much faster now
+  * Solved issue with charset in forms and dialogs captions
+  * Declaration of the TsPathDialog was moved from sDialogs to acPathDialog unit
+  * Buttons are drawn faster
+  * Resizing of forms is faster
+  * Faster painting of TsListView items
+  * Solved problem with OnPaint event in TsScrollBox and TsFrameBar components  
+  + In the TsFrameBar component are added OnChange, OnChanging and OnClosing events
+  + Added OnCloseUp event in the TsDateEdit component
+  + Added support of stretched mode in drawing of masked borders
+  + Added ShowGrip property in the TsSplitter component
+  + Added support of united and multilined columns in the TsDBGrid component (AlphaDB package)
+  + Added new "iOS4" skin  
+  + Many improvements in the TsPageControl component :      
+    * Fixed issue of standard pagecontrol drawing when Manifest is used and TabPosition is not tpTop
+    * Improved drawing of Close buttons, added automatic tab width changing, improved content aligning in skinned and in standard modes
+    * TsTabSheet.SkinData.SkinSection property is supported now  
+    + In the TsTabsheet were added new TabType (ttButton, ttMenu, ttTab) and TabMenu : TPopupMenu properties
+    + In the TsPageControl were added new RotateCaptions and AtiveIsBold properties
+    + Added additional handling of disabled pages (drawn as semi-transparent and not accessible now)
+    + Added NewPage:TsTabSheet parameter in OnChanging event
+
+11.04.2011 AlphaControls v7.34 Stable released
+
+  * Added NOACPNG key in the sDefs.inc file (disables AlphaControls PNG loader, may be useful in systems which have Png support already)
+  * Fixed error in loading PNG from stream
+  * Fixed error in initialization of the TsListView drawitems event
+  * Improved drawing of background in TsCheckBox and TsRadioButton
+  * Fixed error with leaving of extended border after a program minimizing
+  * Improved drawing of menuline under Windows 7
+  * Some improvements in resizing of forms
+  * Some improvements in the TsSpeedButton drawing
+  * Improved drawing of buttons SpinEdits  
+
+16.03.2011 AlphaControls v7.33 Stable released
+
+  * Fixed error in buttons clicking when button is destroyed in OnClick event
+  * Removed a memory leak which occurs when glowing effect used
+  * Improved navigation buttons drawing in cxScheduler
+  * Wrapped text is aligned to the left in checkboxes (standard behaviour)
+  * Solved problem in clicking of title buttons when extended borders used
+  * A lot of minor improvements
+
+24.02.2011 AlphaControls v7.32 Stable released
+
+  * Improved drawing of captions in DevEx VerticalGrid
+  * Removed automatic closing of popup listboxes after scrolling
+  * Solved problems in filling of bitmaps when height = 1
+  * Improved drawing of disabled TsComboBoxEx component
+  * Improved drawing of shadowed label
+  * Improved drawing of items in TsLisView when style if vsIcon
+  * Some improvements in forms painting
+  * Some improvements in spinedits behaviour
+     
+11.02.2011 AlphaControls v7.31 Stable released
+
+  * Fixed error in the Close button clicking in system dialogs (when AllowGlowing is True)
+  * Fixed error in Magnifier closing when modal form is shown immediately after that
+  * Solved problem with aligning of text in standard TPanel
+  * Some improvements in drawing of standard TPageControl
+  * Solved problem with scrolling in the TsFrameBar component when skins are off
+  * Several minor bug-fixes and improvements
+
+28.01.2011 AlphaControls v7.30 Stable released
+
+  * Solved several refreshing problems
+  * Fixed an error in form minimizing
+  * Many minor improvements
+  * Updated all skins
+
+16.01.2011 AlphaControls v7.29 Stable released
+
+  * Solved problem in disabled TsComboBoxEx component
+  * Solved problem of TsPanel refreshing
+  * Solved problem in TsSkinManager.Saturation and TsSkinManager.HueOffset properties
+
+14.01.2011 AlphaControls v7.28 Stable released
+
+  * Fixed error in the non-skinned TsListView component
+  * Several minor bug-fixes and improvements
+
+13.01.2011 AlphaControls v7.27 Stable released
+
+  * Fixed error in TsPageControl when several SkinManagers are used
+  * Improved showing of forms without TsSkinProvider component
+  * Solved some problems with forms minimizing animation
+  * Solved some problems linked with RTL languages using
+  + Added new "Winter2011" skin
+  * Minor improvements
+
+20.12.2010 AlphaControls v7.26 Stable released
+
+  + Added OnColorName event in the TsColorBox component
+  + Added PopupWidth property in the TsDateEdit component
+  + Added ShowFocus property in the TsPageControl component
+  + Added automatic changing of TsPanel borders after the Bevels property changing
+  * Some improvements in extended borders drawing
+  * Solved problem in MDI forms which was occured after skins switching off
+  * Solved some problems in work of skinned forms
+  * Minor improvements         
+
+06.12.2010 AlphaControls v7.25 Stable released
+
+  * Some improvements in the ASkinEditor tool
+  * Improved drawing of border icons  
+  * Improved work of CustomDraw events in the TsListView control
+  * Many small improvements    
+  + Added new "Garnet" skin
+
+25.11.2010 AlphaControls v7.24 Stable released
+
+  * Improved repainting of active button in dialogs
+  * Improved refreshing of skinned forms under Aero when ExtendedBorders are not used
+  * Fixed error in the TsBoundLabel.SetFont procedure
+  * Fixed error in the TsDecimalSpinEdit.Value property initializing
+  * Minor improvements         
+
+24.11.2010 AlphaControls v7.23 Stable released
+
+  * Improved preview in SavePictureDialog and OpenPictureDialog
+  * Improved repainting of window after restoring under Aero (when ExtendedBorders are not used)
+  * Solved problem with dropping down of ComboBoxes
+  * Solved problem with OnChange event in the TsDecimalSpinEdit component
+
+19.11.2010 AlphaControls v7.22 Stable released
+
+  * Solved several problems in skinned MDI
+  * Improved switching between skinned forms under Aero
+  * Improved custom item drawing in TsTreeView and TsListView components
+  * Improved z-ordering of dialogs
+  * Improved indicator drawing in the TsDBGrid component
+  * Many minor improvements
+  + Added new "Office2010 Blue" skin
+
+05.11.2010 AlphaControls v7.21 Stable released
+
+  * Improved support of Right-To-Left languages
+  * Solved problems in work of mouse events with extended borders
+  * Added support of DevEx version 6.53
+  * Added support of OnDrawItem event in the TsListView
+  * Fixed error in standard TStatusBar
+  * Many minor improvements
+  + Added new "Air" skin
+
+22.10.2010 AlphaControls v7.20 Stable released
+
+  * Some improvements in dialogs drawing
+  * Improved SelectSkin dialog
+  * Solved problem with repainting of transparent controls on the TsPageControl
+  + Added support of OnDrawPanel in the standard TStatusBar
+  + Added new "KaraKum" skin      
+
+14.10.2010 AlphaControls v7.10 Beta released
+
+  * Solved problem in TsSpinEdit and TsTimePicker components
+  * Solved problem with the AlphaDB package installation under RAD Studio XE
+  * Solved problem with scrolling of tabs in the TsPageControl  
+  * Solved problem with docking to the TsPageControl control
+  * Solved problem with non-editable sSpinEdits    
+  * Improved behaviour of docked forms
+  * Improved work of glowed BorderIcons and ExtendedBorders        
+
+06.10.2010 AlphaControls v7.09 Beta released
+
+  * Some improvements in the TsMagnifier component
+  * Solved problem with skin deactivation in the TsTreeView component
+  * Solved problem with form restoring
+  * Solved problem with maximized form and hidden taskbar (under Aero)    
+  * Solved problem with invalid input characters in the TsSpinEdit
+  * Improved drawing of grouped TsListView
+  * Improved drawing of TsPageControl with bottom tabs in some skins  
+  + Added new "Deep" skin      
+
+26.09.2010 AlphaControls v7.08 Beta released
+
+  * Solved problem when OnAdvancedCustomDrawItem event is not stored in TsTreeView
+  * Solved some problem in updating of ExtendedBorders
+  * Solved problem with a text drawing in TsComboBox
+  * Solved problem with standard dialogs
+
+22.09.2010 AlphaControls v7.07 Beta released
+
+  * Solved problem in DevExpress with AlphaSkins compiling
+  * Fixed some errors in menus
+
+21.09.2010 AlphaControls v7.06 Beta released
+
+  * Improved aligning of column captions in the TsDBGrid control
+  * Solved some problems with animation of forms restoring
+  * Solved problem with ListView items refreshing
+  * Added TsListBox.Count function for Delphi 5
+  * Added TsAlphaHints.ShowHint(Position: TPoint; HintText: String) procedure  
+  * Solved problem in DB grids scrolling
+  * Added support of the Embarcadero RAD Studio XE
+  * Many improvements in skinning of system dialogs            
+
+07.09.2010 AlphaControls v7.05 Beta released
+
+  * Solved problem with a ghost effect in the TsTrackBar control when custom ThumbGlyph is defined
+  * Optimized and improved a drawing of TsBitBtn control
+  * Optimized initialization of standard and third-party controls
+  * Solved problem with refreshing of autosized TsCheckBox after Caption changing from keyboard
+  * Solved problem with OnDrawItem event in TsComboBox and TsListBox controls
+  * Solved problem with OnDrawPanel event in TsStatusBar control
+  * Solved problem in scrolling of DoubleBuffered TsListView and with Checkboxes drawing in items  
+  * Solved problem with a help showing (HelpCtx parameter using) in sMessageDlg procedures
+  * Solved problem in using of the DisabledImages property in the TsToolBar control
+  * Solved a drawing problem in the TsToolBar control when sizes of buttons are changed  
+  * Added ShowMainCaption propert in the TsSkinProvider.AddedTitle property
+  * Fixed error in TsTreeView control when SkinData.SkinSection is changed 
+  * Fixed errors in sSpinEdits under Delphi 5
+
+03.09.2010 AlphaControls v6.69 Stable released
+
+  * Solved problem with corners painting in groupboxes and radiogroups
+  * Improved animation in the TsFrameBar component 
+  * Improved behaviour of calendar when MinData or MaxDate defined  
+  * Improved drawing of the TsTrackBar component when BorderWidth is not 0
+
+05.08.2010 AlphaControls v7.04 Beta released
+
+  * Improved minimizing/restoring animation
+  * Fixed error in the TsSpinEdit control
+  * Solved problem with TJvGifAnimator placed on skinned form     
+  * Fixed several issues in the TsListView component
+  * Improved drawing of images and scrolling in the TsComboBoxEx component
+  * Improved drawing of standard TPageControl component
+  * Solved problem in Twain dialog      
+
+30.07.2010 AlphaControls v7.03 Beta released
+
+  * Solved some problems in support of the DevEx package 
+  * Solved problem in non-skinned TsCoolBar control
+  * Solved problem with a system combobox in dialogs
+  * Improved drawing of some dialogs, solved a problem with repainting
+  * Solved problem with support of imagelists in standard TButton control
+  * Solved problem in the TImageEnVect control scrolling
+  * Improved drawing of the TsDBGrid in animation
+  * Solved problem with TsColorSelect refreshing
+  * Speed of MDIChild forms painting is faster now
+  * Solved problem with small images painting in TsListView
+  + Added support of TrackBar control in system dialogs
+  + Improved the TsMagnifier component, added the Style property (amsRectangle, amsLens)
+  * ACExtra package is updated to version 7, added new TacListView component there
+
+23.07.2010 AlphaControls v7.02 Beta released
+
+  * Solved problem in hiding of form when ExtBorders are used
+  * Solved problem with WM_COPYDATA message
+  * Solved problem with animation of dialogs closing
+  * Solved problem with PasswordChar in the TsEdit when control is disabled
+  * Solved problem with CalcPercents property in the TsGauge component
+  * Solved problem with OnDrawItem event in the TsListBox component
+  * Solved problem of images drawing in TsListView subitems
+  * Solved problem with system menu of MDIChild window when window is maximized
+  * Solved some problems in minimizing/restoring of application
+  * Solved problem with validating of input characters in sSpinEdits
+  * Solved problem in sTrackBar drawing when animated         
+  * Improved behaviour of popup calendar when date is not valid          
+  + SkinData.HUEOffset and SkinData.Saturation properties were added in buttons and many other controls  
+
+16.07.2010 AlphaControls v7.01 Beta released
+
+  * Solved problem with sComboBoxes removing
+  * Solved problem with unskinned TsCoolBar showing
+  * Solved problem with MultiSelect mode in sListBoxes
+
+15.07.2010 AlphaControls 2010 (v7.00) Beta released
+
+  * Internal bitmap format is changed from 24 to 32 bits
+  * Faster drawing and improved animations
+  + Added minimizing/restoring animation, added the TsSkinManager.AnimEffects.Minimizing property
+  + Forms and dialogs may be alphablended automatically when moved, added TsSkinManager.AnimEffects.BlendOnMoving property  
+  + Added TsSkinProvider.AllowBlendOnMoving property
+  + Added new cbSavedColors style for the TsColorBox component
+  + Added 'SELECTION' skin section
+  * Drawing of selections was improved in TsListView, TsTreeView and in all comboBoxes and listboxes from the package
+  + All comboBoxes and listboxes from the package may be alphablended (if defined in skin)
+  * Updated the ASkinEditor.exe     
+  * All skins are updated  
+  * TsComboBoxEx component is changed completely (default style is csExDropDown)
+  * In the TsButton control added support of the CommandLink style and the Reflected property  
+  * TsSkinManager.AllowGlowing property was moved to TsSkinManager.Effects.AllowGlowing
+  * Huge changes in the ASkinEditor tool  
+  * ZLibEx unit was renamed to acZLibEx for compatibility with original ZLibEx library
+  - Removed the deprecated TsCommonData.InitCacheBmp procedure (use InitCacheBmp procedure which is declared in the sCommonData unit)
+  - Support of unpacked internal skins was removed (only packed skins may be built-in now)   
+

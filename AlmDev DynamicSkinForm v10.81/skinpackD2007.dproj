@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{32fd25f6-da19-4bd6-8ef5-f0561eb16cc7}</ProjectGuid>
+    <MainSource>skinpackD2007.dpk</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>skinpackD2007.bpl</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>Package</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><Package_Options><Package_Options Name="ImplicitBuild">False</Package_Options><Package_Options Name="DesigntimeOnly">False</Package_Options><Package_Options Name="RuntimeOnly">False</Package_Options></Package_Options><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1031</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">skinpackD2007.dpk</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="skinpackD2007.dpk">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="designide.dcp" />
+    <DCCReference Include="DynamicSkinForm.pas" />
+    <DCCReference Include="rtl.dcp" />
+    <DCCReference Include="SkinBoxCtrls.pas" />
+    <DCCReference Include="SkinCtrls.pas" />
+    <DCCReference Include="SkinData.pas" />
+    <DCCReference Include="SkinExCtrls.pas" />
+    <DCCReference Include="SkinGrids.pas" />
+    <DCCReference Include="SkinHint.pas" />
+    <DCCReference Include="SkinMenus.pas" />
+    <DCCReference Include="SkinPrinter.pas" />
+    <DCCReference Include="SkinTabs.pas" />
+    <DCCReference Include="spbuttongroup.pas" />
+    <DCCReference Include="spcalendar.pas" />
+    <DCCReference Include="spcategorybuttons.pas" />
+    <DCCReference Include="spColorCtrls.pas" />
+    <DCCReference Include="spconst.pas" />
+    <DCCReference Include="spDialogs.pas" />
+    <DCCReference Include="SPEffBmp.pas" />
+    <DCCReference Include="spfilectrl.pas" />
+    <DCCReference Include="spMessages.pas" />
+    <DCCReference Include="spNBPagesEditor.pas">
+      <Form>spNBPagesForm</Form>
+    </DCCReference>
+    <DCCReference Include="sppngimage.pas" />
+    <DCCReference Include="spPngImageEditor.pas" />
+    <DCCReference Include="sppngimagelist.pas" />
+    <DCCReference Include="spreg.dcr" />
+    <DCCReference Include="spreg.dcr" />
+    <DCCReference Include="spreg.pas" />
+    <DCCReference Include="spRootEdit.pas">
+      <Form>spRootPathEditDlg</Form>
+    </DCCReference>
+    <DCCReference Include="spSkinShellCtrls.pas" />
+    <DCCReference Include="spSkinUnZip.pas" />
+    <DCCReference Include="spSkinZip.pas" />
+    <DCCReference Include="spTrayIcon.pas" />
+    <DCCReference Include="SPUtils.pas" />
+    <DCCReference Include="spzlib.pas" />
+    <DCCReference Include="spzlibcompress.pas" />
+    <DCCReference Include="vcl.dcp" />
+    <DCCReference Include="vclactnband.dcp" />
+    <DCCReference Include="vcljpg.dcp" />
+    <DCCReference Include="vclx.dcp" />
+  </ItemGroup>
+</Project>

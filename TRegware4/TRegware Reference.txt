@@ -1,0 +1,240 @@
+WAK Productions Presents:
+TRegware Shareware Security Component for Delphi
+Version 4.00
+Copyright ©2003 - WAK Productions
+------------------------------------------------
+Programmed by Winston Kotzan
+Email: wak@wakproductions.com
+Website URL: http://www.wakproductions.com/
+
+
+
+TRegware4 Reference
+-------------------------------------------------
+Use TRegware4 to handle the registration and evaluation time functions of your
+shareware program.  Just drop it on the form and set the properties!  To
+register the program, use the DoRegistration() function.
+
+
+PUBLISHED (DESIGN-TIME ONLY) PROPERTIES
+---------------------------------------
+property BanList: TStringList;
+    A list of registration codes to ban - each line should be a registration
+    code that you do not want TRegware to accept.
+
+property CheckTamper: boolean;
+    Set this property to true if you want TRegware to check for tampering to the
+    system's clock.  Useful for detecting if someone sets their clock back to
+    avoid a time bomb.  If TRegware does detect tampering, the program will
+    report that it has expired.
+
+property ComponentVersion: string;
+    The version of TRegware currently being used.
+
+property Days: integer;
+    This is the number of days the user will have for evaluating your product.
+    If the user tries to use the program more than x Days, TRegware will report
+    that the program is expired (Expired property = true).  Changing this value
+    during the operation of the program will have no effect.
+
+property MaxChars: integer;
+    Maximum number of characters that LicenseID can be.
+
+property MinChars: integer;
+    Minimum number of characters that LicenseID can be.
+
+property ProgGUID: string;
+    The GUID string indicating the registry key where timebomb and registration
+    information is stored.  For more information on GUID's, look up TGUID
+    in your Delphi online help file or look at the TRegware FAQ.txt file.
+
+property RegCodeSize: integer;
+    The number of digits you would like the registration code to be.  Setting
+    this to 14 will cause TRegware to only accept registration codes 14
+    characters long.
+
+property Seed1: integer;
+property Seed2: integer;
+property Seed3: integer;
+    A number used in generating the registration code.  Changing this number
+    will yield different registration codes.  It is necessary to set all three
+    of these properties to an integer value between 1000 and 268435455.  If they
+    are not propertly set, a reminder message will appear.
+
+property Timebomb: boolean;
+    Set this to true if you want TRegware4 to cause the program to stop
+    functioning (expire) after a certain number of days, so that the user has a
+    limited amount of time to evaluate the program.  If this is set to false,
+    the program will never expire.  The Days property determines how many days
+    the program has before it expires.
+
+property LicenseOptions: TLicenseOptions;
+    Values to specify how LicenseID will be generated. This will allow you
+    to accomodate site licenses/single user licenses and specify TRegware
+    to generate system-unique LicenseID's.  These options are only for advanced
+    users and do not need to be changed from their default values.
+
+property LicenseOptions.LicenseSource: TLicenseSource;
+    LicenseSource determines the method used to obtain the TRegware.LicenseID
+    value.  If LicenseSource is lsUserDefined, then the value of LicenseID will
+    be determined by the value passed to the DoRegistration() function.  If this
+    value is not lsUserDefined, then the LicenseID value passed to
+    DoRegistration() will be ignored and LicenseID will be one of the following
+    values:
+
+  lsUserDefined - user defined license name
+  lsWindowsID - uses the ProductID number of the Windows OS
+  lsWindowsIDMod - a processed version of the Windows ProductID
+
+  *LicenseOptions.LicenseSource is for advanced users and does not need to be
+   changed from its default value.
+
+property LicenseOptions.LicenseType: TLicenseType;
+    Use this to specify between single-user licenses and site licenses.  If set
+    to ltSiteLicense, the TRegware behaves as if LicenseSource is lsUserDefined,
+    regardless of the value LicenseSource is set to.  If LicenseSource is
+    lsUserDefined, then this settting has little effect.
+
+  *LicenseOptions.LicenseType is for advanced users and does not need to be
+   changed from its default value.
+
+
+PUBLIC (RUNTIME-ONLY) PROPERTIES
+--------------------------------
+property DaysLeft: integer;
+    The number of days left (if unregistered) for the evaluation period.
+    This property is equal to -1 if the program is registered.  If DaysLeft
+    reaches 0, the program expires and the Expired property reports true until
+    the user registers the program.
+
+property Email: string;
+    Email will be the email address passed to DoRegistration(). It will be a
+    blank string until the program is registered.
+
+property Expired: boolean;
+    Indicates whether the program has expired.  The program expires when the
+    user has gone beyond his evaluation period by using the program more than
+    X Days.  The Days published property determines how many days the user has
+    in his evaluation period.
+
+property LicenseID: string;
+    LicenseID is the LicenseID value passed to DoRegistration().  This value
+    will be a blank string until the program has been registerd. If
+    LicenseOptions.LicenseSource is NOT lsUserDefined, then the value of
+    LicenseID will automatically be a system-generated LicenseID, unique to the
+    computer running the program.
+
+property Organization: string;
+    Organization is the Organization value passed to DoRegistration().  This
+    value will be a blank string until the program has been registered.
+
+property RegCode: string;
+    RegCode is the RegCode value passed to DoRegistration().  This value will be
+    a blank string until the program has been registered.
+
+property Registered : Boolean read GetRegistered;
+    Indicates whether the program has been registered.  To register the program,
+    use the DoRegistration() function.  See DoRegistration() for more
+    information.
+
+property RegVersion: string;
+    Version of TRegware being used.
+
+
+PUBLIC METHODS
+--------------
+constructor Create(AOwner: TComponent); override;
+    Creates a new instance of TRegware4.
+
+destructor Destroy; override;
+    Frees associated memory with TRegware4.  Do not call Destroy directly,
+    instead call the Free method.
+
+
+function CalculateCode(LicenseName: string): string;
+    Obsolete - Do not use!
+
+function CheckExpired: boolean;
+    Same as the Expired property.
+
+function CheckRegistered: boolean;
+    Same as the Registered property.
+
+function DoRegistration(drLicenseID, drOrganization,
+                        drRegCode, drEmail: string): boolean; overload;
+    DoRegistration() "registers" the program.
+
+    LicenseID is a string used to identify the user. It could be the user's
+    name, or some sort of identifying code.  It can also be referred to as a
+    User ID.
+
+    Organization is optional, it can be the user's company name. Organization
+    is ignored if it is a null string.
+
+    RegCode is a serial number based on LicenseID.  This is the "registration
+    code" used to check that the user has a valid (usually paid for) license.
+    If the user enters a RegCode that does not match up with
+    "LicenseID + algorithm()", then TRegware rejects the user's registration
+    attempt and the program remains unregistered.  Give the user thier RegCode
+    after they purchased your program.  To generate RegCode, use the
+    TRegCodeGenerator component, the included Perl script (regware4gen.pl), or
+    the included Demo program.  The Regware4 component itself does not have
+    capabilities to generate registration codes for security-related reasons.
+
+    Email is an optional email address provided by the user.
+
+    Note: If LicenseOptions.LicenseSource is not lsUserDefined, then the
+      value drLicenseID parameter is ignored and will be replaced by a
+      system-generated LicenseID, unique to the computer running the program.
+      So, unless lsUserDefined is selected, you can pass an empty string as
+      LicenseID.
+
+procedure Reload;
+    Reloads the registry information.  Used primarily by the demo to show the
+    registry status of several programs.
+
+procedure SetUnregistered;
+    Resets the registry so that the program becomes unregistered. If the
+    Timebomb property is true, then the timebomb is reset.
+
+
+
+
+TRegCodeGenerator4 Reference
+-------------------------------------------------
+Use TRegCodeGenerator4 to generate your own registration codes.  Simply set all
+of the properties to the same as the TRegware4 component in your shareware
+program, and use the GenerateCode() function.  The code generation function
+is in this separate component to prevent crackers from disassembling your
+shareware program and creating an illegal key generator.
+
+
+PUBLISHED (DESIGN-TIME ONLY) PROPERTIES
+---------------------------------------
+property MaxChars: integer;
+property MinChars: integer;
+property Seed1: integer;
+property Seed2: integer;
+property Seed3: integer;
+property RegCodeSize: integer;
+    Set all of the above properties to the same as the TRegware component in
+    your shareware program.
+
+
+PUBLIC METHODS
+--------------
+constructor Create(AOwner: TComponent); override;
+    Creates a new instance of TRegCodeGenerator4.
+
+destructor Destroy; override;
+    Frees associated memory with TRegware4.  Do not call Destroy directly,
+    instead call the Free method.
+
+
+function GenerateCode(LicenseID: string; ExpireDate: TDate): string;
+    This function returns a registration code for the LicenseID passed to it.
+    ExpireDate is the date that the registration code will expire.  Set this to
+    0 for no expiration date.  If the user tries to register the program with
+    the returned registration code after the expiration date, TRegware will
+    reject the registration code.  The expiration date is encoded in the
+    registration code.

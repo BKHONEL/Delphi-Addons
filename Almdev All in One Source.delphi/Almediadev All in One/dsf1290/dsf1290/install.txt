@@ -1,0 +1,24 @@
+For Delphi 5-XE3:
+
+ - open *.dpk file
+ - install package
+
+For C++Builder 5, 6:
+
+ - open *.bpk file
+ - install package
+
+For C++Builder 2006-XE3:
+
+ - open *.cbproj file
+ - install package
+
+See dsfsb.zip with SkinBuilder sources.
+
+
+Note:
+
+   if you use DynamicSkinForm VCL in Delphi 2007-XE3 or C++Builder 2007XE3
+   you must open project sources in designing time and
+   set Application.MainFormOnTaskBar to False!
+

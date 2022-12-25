@@ -1,0 +1,13 @@
+You can find information on updating the RTC SDK components in the "Readme.txt" file.
+
+*******************************************************
+*                                                     *
+* RealThinClient SDK v5.15, released April 25th 2012. *
+*                                                     *
+*******************************************************
+
+---------------------------------------------------------
+* Changes in v5.15
+---------------------------------------------------------
+
+1) NexusDB plugins updated to work with later NexusDB versions.

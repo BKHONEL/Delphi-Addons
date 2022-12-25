@@ -1,0 +1,99 @@
+package BiE16;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Billenium Effects for XE2'}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  designide,
+  vcl,
+  vclactnband,
+  vclx,
+  xmlrtl,
+  vclimg;
+
+contains
+  teAbout in 'teAbout.pas',
+   FormCont,
+  teAllTr,
+  teAnim,
+  teBkgrnd,
+  teBlckEd,
+  teBlend,
+  teBlur,
+  teBlurEd,
+  teBlndWk,
+  teBmMkEd,
+  teBmpMsk,
+  teBlock,
+  teChrono,
+  teCircle,
+  teCtrls,
+  teDiagon,
+  teDrip,
+  teEditor,
+  teForm,
+  teFormAn,
+  teFuse,
+  teFuseEd,
+  teImage,
+  teIntrlc,
+  teMasked,
+  teMskWk,
+  teModEdit,
+  teMskEd,
+  tePage,
+  tePageEd,
+  tePixelt,
+  tePixlEd,
+  tePush,
+  teRadial,
+  teRandom,
+  teRender,
+  teRndEd,
+  teRndLis,
+  teRoll,
+  teRollEd,
+  teSldEd,
+  teSlide,
+  teTimed,
+  teTrEfEd,
+  teTrExpo,
+  teTrLEdi,
+  teVclCtl,
+  teVclScr,
+  teWFall,
+  teWipe,
+  teWipeEd,
+  teZFrAn,
+  TransEff,
+   teAnLEdi,
+  teReg,
+  teXperts;
+
+end.

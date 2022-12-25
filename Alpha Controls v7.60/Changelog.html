@@ -1,0 +1,1463 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="Changelog.css">
+<title>Text Compare</title>
+</head>
+<body>
+<br/>
+File: acSBUtils.pas &nbsp;
+<br/>
+<table class="fc" cellspacing="0" cellpadding="0">
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">817</td>
+<td class="TextItemNum AlignRight">817</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">MouseOverRect</span> <span class="TextSegElementOperator">:</span><span class="TextSegElementIdentifier">TRect</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">818</td>
+<td class="TextItemNum AlignRight">818</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">bDroppedDown</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">boolean</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">False</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">819</td>
+<td class="TextItemNum AlignRight">819</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">820</td>
+<td class="TextItemNum AlignRight">820</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">ServWndList</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TList</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">821</td>
+<td class="TextItemNum AlignRight">821</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">Ac_GetScrollBarInfo</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementKeyword">Function</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">hwnd</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">HWND</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementIdentifier">idObject</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">Longint</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementKeyword">var</span> <span class="TextSegElementIdentifier">psbi</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TScrollBarInfo</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">BOOL</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementKeyword">stdcall</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">822</td>
+<td class="TextItemNum AlignRight">822</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">823</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd"><span class="TextSegSigDiff">const</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">824</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">825</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">FONT_CAPTION</span>&nbsp;&nbsp; <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">1</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">826</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">FONT_SMCAPTION</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">2</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">827</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">FONT_MENU</span>&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">3</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">828</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">FONT_STATUS</span>&nbsp; &nbsp; <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">4</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">829</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">FONT_MESSAGE</span>&nbsp;&nbsp; <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">5</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">830</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">831</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd"><span class="TextSegSigDiff">function</span> <span class="TextSegSigDiff">ac_GetSysFont</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">fType</span> <span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">integer</span><span class="TextSegSigDiff">)</span> <span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">hFont</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">832</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd"><span class="TextSegSigDiff">var</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">833</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">TNonClientMetricsW</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">834</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd"><span class="TextSegSigDiff">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">835</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">cbSize</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">SizeOf</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">836</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">if</span> <span class="TextSegSigDiff">SystemParametersInfoW</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">SPI_GETNONCLIENTMETRICS</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">@</span><span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">)</span> <span class="TextSegSigDiff">then</span> <span class="TextSegSigDiff">with</span> <span class="TextSegSigDiff">NonClientMetrics</span> <span class="TextSegSigDiff">do</span> <span class="TextSegSigDiff">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">837</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; <span class="TextSegSigDiff">case</span> <span class="TextSegSigDiff">fType</span> <span class="TextSegSigDiff">of</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">838</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">FONT_CAPTION</span>&nbsp;&nbsp; <span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">Result</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">CreateFontIndirectW</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">lfCaptionFont</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">839</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">FONT_SMCAPTION</span> <span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">Result</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">CreateFontIndirectW</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">lfSmCaptionFont</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">840</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">FONT_MENU</span>&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">Result</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">CreateFontIndirectW</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">lfMenuFont</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">841</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">FONT_STATUS</span>&nbsp; &nbsp; <span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">Result</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">CreateFontIndirectW</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">lfStatusFont</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">842</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">FONT_MESSAGE</span>&nbsp;&nbsp; <span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">Result</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">CreateFontIndirectW</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">lfMessageFont</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">843</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; <span class="TextSegSigDiff">end</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">844</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">end</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">845</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">else</span> <span class="TextSegSigDiff">Result</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">846</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd"><span class="TextSegSigDiff">end</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">847</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">848</td>
+<td class="TextItemNum AlignRight">823</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">procedure</span> <span class="TextSegElementIdentifier">AlphaBroadCastCheck</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Control</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TControl</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementIdentifier">Handle</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">hwnd</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementKeyword">var</span> <span class="TextSegElementKeyword">Message</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">849</td>
+<td class="TextItemNum AlignRight">824</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">850</td>
+<td class="TextItemNum AlignRight">825</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">Control</span> <span class="TextSegElementOperator">&lt;</span><span class="TextSegElementOperator">&gt;</span> <span class="TextSegElementKeyword">nil</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementIdentifier">AlphaBroadcast</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">TWinControl</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Control</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementKeyword">Message</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">else</span> <span class="TextSegElementIdentifier">AlphaBroadcast</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Handle</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementKeyword">Message</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">851</td>
+<td class="TextItemNum AlignRight">826</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">852</td>
+<td class="TextItemNum AlignRight">827</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionGap"><td colspan="3">&nbsp;</td></tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">3179</td>
+<td class="TextItemNum AlignRight">3154</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">var</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3180</td>
+<td class="TextItemNum AlignRight">3155</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">DC</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">SavedDC</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">hdc</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3181</td>
+<td class="TextItemNum AlignRight">3156</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">PS</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TPaintStruct</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3182</td>
+<td class="TextItemNum AlignRight">3157</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">R</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TRect</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3183</td>
+<td class="TextItemNum AlignRight">3158</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">3184</td>
+<td class="TextItemNum AlignRight">3159</td>
+<td class="TextItemSame"><span class="TextSegElementCompiler_32Directive">{$IFDEF LOGGED}</span></td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">3185</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">//&nbsp; AddToLog(Message);</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">3160</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">AddToLog</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">Message</span><span class="TextSegSigDiff">);</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">3186</td>
+<td class="TextItemNum AlignRight">3161</td>
+<td class="TextItemSame"><span class="TextSegElementCompiler_32Directive">{$ENDIF}</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3187</td>
+<td class="TextItemNum AlignRight">3162</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementIdentifier">Assigned</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Skinned</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3188</td>
+<td class="TextItemNum AlignRight">3163</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">inherited</span> <span class="TextSegElementIdentifier">acWndProc</span><span class="TextSegElementOperator">(</span><span class="TextSegElementKeyword">Message</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3189</td>
+<td class="TextItemNum AlignRight">3164</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">Exit</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3190</td>
+<td class="TextItemNum AlignRight">3165</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">3191</td>
+<td class="TextItemNum AlignRight">3166</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementKeyword">Message</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Msg</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">SM_ALPHACMD</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">case</span> <span class="TextSegElementKeyword">Message</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">WParamHi</span> <span class="TextSegElementKeyword">of</span></td>
+</tr>
+<tr class="SectionGap"><td colspan="3">&nbsp;</td></tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">3444</td>
+<td class="TextItemNum AlignRight">3419</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementIdentifier">bPreventStyleChange</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3445</td>
+<td class="TextItemNum AlignRight">3420</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">Assigned</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Updating</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">True</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3446</td>
+<td class="TextItemNum AlignRight">3421</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">bPreventStyleChange</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">True</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3447</td>
+<td class="TextItemNum AlignRight">3422</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">inherited</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3448</td>
+<td class="TextItemNum AlignRight">3423</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">Assigned</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">and</span> <span class="TextSegElementIdentifier">Assigned</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">SkinManager</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">and</span> <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">SkinManager</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">IsValidSkinIndex</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">SkinIndex</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">3449</td>
+<td class="TextItemNum AlignRight">3424</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">Assigned</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FOwnerControl</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span> <span class="TextSegElementComment">// If VCL used</span></td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">3450</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">if</span> ControlIsActive(SkinData) <span class="TextSegSigDiff">then</span> <span class="TextSegSigDiff">b</span> <span class="TextSegSigDiff">:=</span> (SkinData.SkinManager.gd[SkinData.SkinIndex].States &gt; 1) <span class="TextSegSigDiff">else</span> <span class="TextSegSigDiff">b</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">False</span>;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">3425</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">b</span> <span class="TextSegSigDiff">:=</span> ControlIsActive(SkinData) <span class="TextSegSigDiff">a</span><span class="TextSegSigDiff">nd</span> (SkinData.SkinManager.gd[SkinData.SkinIndex].States &gt; 1);</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">3451</td>
+<td class="TextItemNum AlignRight">3426</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">CustomColor</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3452</td>
+<td class="TextItemNum AlignRight">3427</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegElementIdentifier">C</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">GetBGColor</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">integer</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">b</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3453</td>
+<td class="TextItemNum AlignRight">3428</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">HasProperty</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FOwnerControl</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">acFocusColor</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3454</td>
+<td class="TextItemNum AlignRight">3429</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">TsHackedControl</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FOwnerControl</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Color</span> <span class="TextSegElementOperator">&lt;</span><span class="TextSegElementOperator">&gt;</span> <span class="TextSegElementIdentifier">C</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementIdentifier">SetIntProp</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FOwnerControl</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">acColor</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">C</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">3455</td>
+<td class="TextItemNum AlignRight">3430</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegElementIdentifier">SetIntProp</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FOwnerControl</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">acFocusColor</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">C</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">3456</td>
+<td class="TextItemNum AlignRight">3431</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegElementKeyword">end</span></td>
+</tr>
+<tr class="SectionGap"><td colspan="3">&nbsp;</td></tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">5828</td>
+<td class="TextItemNum AlignRight">5803</td>
+<td class="TextItemSame"><span class="TextSegElementCompiler_32Directive">{$ENDIF}</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">5829</td>
+<td class="TextItemNum AlignRight">5804</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">5830</td>
+<td class="TextItemNum AlignRight">5805</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">function</span> <span class="TextSegElementIdentifier">TacStaticWnd</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">PaintText</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">boolean</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">5831</td>
+<td class="TextItemNum AlignRight">5806</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">var</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">5832</td>
+<td class="TextItemNum AlignRight">5807</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">rText</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TRect</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">5833</td>
+<td class="TextItemNum AlignRight">5808</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">Flags</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">Cardinal</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">5834</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">OldFont</span> : hFont;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">5809</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">f</span> : hFont;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">5835</td>
+<td class="TextItemNum AlignRight">5810</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">5836</td>
+<td class="TextItemNum AlignRight">5811</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">Caption</span> <span class="TextSegElementOperator">&lt;</span><span class="TextSegElementOperator">&gt;</span> <span class="TextSegElementString">''</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">5837</td>
+<td class="TextItemNum AlignRight">5812</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FCacheBmp</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Canvas</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Brush</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Style</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">bsClear</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">5838</td>
+<td class="TextItemNum AlignRight">5813</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">rText</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">Rect</span><span class="TextSegElementOperator">(</span><span class="TextSegElementNumber">0</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementNumber">0</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">WndSize</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">cx</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">WndSize</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">cy</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">5839</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; <span class="TextSegSigDiff">OldFont</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">SelectObject</span><span class="TextSegSigDiff">(</span>SkinData.FCacheBmp.Canvas.Handle<span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">ac_GetSysFont</span><span class="TextSegSigDiff">(</span>F<span class="TextSegSigDiff">ONT_MESSAGE</span><span class="TextSegSigDiff">))</span>;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">5814</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; <span class="TextSegSigDiff">f</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">LongWord</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">SendMessage</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">CtrlHandle</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">WM_GETFONT</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">5815</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; SkinData.FCacheBmp.Canvas.<span class="TextSegSigDiff">Font</span><span class="TextSegSigDiff">.</span>Handle <span class="TextSegSigDiff">:=</span> f;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">5840</td>
+<td class="TextItemNum AlignRight">5816</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">5841</td>
+<td class="TextItemNum AlignRight">5817</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">Flags</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">DT_TOP</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementIdentifier">DT_EXPANDTABS</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementIdentifier">DT_WORDBREAK</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementIdentifier">DT_NOCLIP</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">5842</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">5843</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; if GetWindowLong(CtrlHandle, GWL_STYLE) and SS_NOPREFIX = SS_NOPREFIX then Flags := Flags <span class="TextSegSigDiff">or</span> DT_NOPREFIX;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">5818</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; if GetWindowLong(CtrlHandle, GWL_STYLE) and SS_NOPREFIX = SS_NOPREFIX then Flags := Flags <span class="TextSegSigDiff">+</span> DT_NOPREFIX;</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">5844</td>
+<td class="TextItemNum AlignRight">5819</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">GetWindowLong</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">CtrlHandle</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">GWL_EXSTYLE</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">and</span> <span class="TextSegElementIdentifier">WS_EX_RIGHT</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">WS_EX_RIGHT</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementIdentifier">Flags</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">Flags</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementIdentifier">DT_RIGHT</span> <span class="TextSegElementKeyword">else</span> <span class="TextSegElementIdentifier">Flags</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">Flags</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementIdentifier">DT_LEFT</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">5845</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; if Application.BiDiMode = bdRightToLeft <span class="TextSegSigDiff">t</span><span class="TextSegSigDiff">h</span><span class="TextSegSigDiff">en</span> <span class="TextSegSigDiff">F</span><span class="TextSegSigDiff">lag</span><span class="TextSegSigDiff">s</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">F</span><span class="TextSegSigDiff">l</span><span class="TextSegSigDiff">a</span><span class="TextSegSigDiff">gs</span> <span class="TextSegSigDiff">or</span> <span class="TextSegSigDiff">DT</span><span class="TextSegSigDiff">_RTLREADING</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">5820</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; if Application.BiDiMode = bdRightToLeft // GetWindowLong(CtrlHandle, GWL_EXSTYLE) and WS_EX_RTLREADING = WS_EX_RTLREADING</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">5821</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">then</span> <span class="TextSegSigDiff">Flags</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">Flags</span> <span class="TextSegSigDiff">or</span> <span class="TextSegSigDiff">DT_RTLREADING</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">5846</td>
+<td class="TextItemNum AlignRight">5822</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">5847</td>
+<td class="TextItemNum AlignRight">5823</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">acWriteTextEx</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FCacheBmp</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Canvas</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">PacChar</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Caption</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">True</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">rText</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">Flags</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">False</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">5848</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; <span class="TextSegSigDiff">SelectObject</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">SkinData</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">FCacheBMP</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Canvas</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Handle</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">OldFont</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">5849</td>
+<td class="TextItemNum AlignRight">5824</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">Result</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">True</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">5850</td>
+<td class="TextItemNum AlignRight">5825</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">end</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">5851</td>
+<td class="TextItemNum AlignRight">5826</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">else</span> <span class="TextSegElementIdentifier">Result</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">True</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">5852</td>
+<td class="TextItemNum AlignRight">5827</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">5853</td>
+<td class="TextItemNum AlignRight">5828</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">5854</td>
+<td class="TextItemNum AlignRight">5829</td>
+<td class="TextItemSame"><span class="TextSegElementComment">{ TacBtnWnd }</span></td>
+</tr>
+<tr class="SectionGap"><td colspan="3">&nbsp;</td></tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">6060</td>
+<td class="TextItemNum AlignRight">6035</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6061</td>
+<td class="TextItemNum AlignRight">6036</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6062</td>
+<td class="TextItemNum AlignRight">6037</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">procedure</span> <span class="TextSegElementIdentifier">TacBtnWnd</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">DrawCaption</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6063</td>
+<td class="TextItemNum AlignRight">6038</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">var</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6064</td>
+<td class="TextItemNum AlignRight">6039</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">R</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TRect</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">6065</td>
+<td class="TextItemNum AlignRight">6040</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">DrawStyle</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">Cardinal</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">6066</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; cf : HFont;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">6041</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">bf</span><span class="TextSegSigDiff">,</span> cf : HFont;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">6067</td>
+<td class="TextItemNum AlignRight">6042</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">6068</td>
+<td class="TextItemNum AlignRight">6043</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">cf</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementNumber">0</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">6069</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; if SkinData.FOwnerControl = nil</td>
+</tr>
+<tr class="SubsectionEnd">
+<td class="TextItemNum AlignRight">6070</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; <span class="TextSegSigDiff">then</span> cf := SelectObject(SkinData.FCacheBMP.Canvas.Handle, <span class="TextSegSigDiff">ac_GetSysFont</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">FONT_MESSAGE</span>)<span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">6044</td>
+<td class="TextItemSigDel">&nbsp; if SkinData.FOwnerControl = nil <span class="TextSegSigDiff">then</span> <span class="TextSegSigDiff">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">6045</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; <span class="TextSegSigDiff">bf</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">LongWord</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">SendMessage</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">CtrlHandle</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">WM_GETFONT</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">6046</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; cf := SelectObject(SkinData.FCacheBMP.Canvas.Handle, <span class="TextSegSigDiff">b</span><span class="TextSegSigDiff">f</span>)<span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">6047</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; <span class="TextSegSigDiff">SkinData</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">FCacheBMP</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Canvas</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Font</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Handle</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">bf</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">6048</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">end</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">6071</td>
+<td class="TextItemNum AlignRight">6049</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">else</span> <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FCacheBMP</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Canvas</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Font</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Assign</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">TBitBtn</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FOwnerControl</span><span class="TextSegElementOperator">).</span><span class="TextSegElementIdentifier">Font</span><span class="TextSegElementOperator">);</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6072</td>
+<td class="TextItemNum AlignRight">6050</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">R</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">CaptionRect</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6073</td>
+<td class="TextItemNum AlignRight">6051</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementComment">{ Calculate vertical layout }</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6074</td>
+<td class="TextItemNum AlignRight">6052</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6075</td>
+<td class="TextItemNum AlignRight">6053</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">DrawStyle</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">DT_EXPANDTABS</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementIdentifier">DT_CENTER</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">6076</td>
+<td class="TextItemNum AlignRight">6054</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">CtrlStyle</span> <span class="TextSegElementKeyword">and</span> <span class="TextSegElementIdentifier">BS_MULTILINE</span> <span class="TextSegElementOperator">&lt;</span><span class="TextSegElementOperator">&gt;</span> <span class="TextSegElementIdentifier">BS_MULTILINE</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementIdentifier">DrawStyle</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">DrawStyle</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementIdentifier">DT_WORDBREAK</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionGap"><td colspan="3">&nbsp;</td></tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">6080</td>
+<td class="TextItemNum AlignRight">6058</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6081</td>
+<td class="TextItemNum AlignRight">6059</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">IsWindowEnabled</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">CtrlHandle</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">and</span> <span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SendMessage</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">CtrlHandle</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">BM_GETSTATE</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementNumber">0</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementNumber">0</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">and</span> <span class="TextSegElementIdentifier">BST_FOCUS</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">BST_FOCUS</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">and</span> <span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Caption</span> <span class="TextSegElementOperator">&lt;</span><span class="TextSegElementOperator">&gt;</span> <span class="TextSegElementString">''</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">and</span> <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">SkinManager</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">gd</span><span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">SkinIndex</span><span class="TextSegElementOperator">]</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">ShowFocus</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6082</td>
+<td class="TextItemNum AlignRight">6060</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">InflateRect</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">R</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementNumber">1</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementNumber">1</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6083</td>
+<td class="TextItemNum AlignRight">6061</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">FocusRect</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FCacheBMP</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Canvas</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">R</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6084</td>
+<td class="TextItemNum AlignRight">6062</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">6085</td>
+<td class="TextItemNum AlignRight">6063</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">6086</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">if</span> <span class="TextSegSigDiff">cf</span> <span class="TextSegSigDiff">&lt;&gt;</span> <span class="TextSegSigDiff">0</span> <span class="TextSegSigDiff">then</span> SelectObject(SkinData.FCacheBMP.Canvas.Handle, cf);</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">6064</td>
+<td class="TextItemSigDel">&nbsp; SelectObject(SkinData.FCacheBMP.Canvas.Handle, cf);</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">6087</td>
+<td class="TextItemNum AlignRight">6065</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6088</td>
+<td class="TextItemNum AlignRight">6066</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6089</td>
+<td class="TextItemNum AlignRight">6067</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">function</span> <span class="TextSegElementIdentifier">TacBtnWnd</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">CaptionRect</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TRect</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6090</td>
+<td class="TextItemNum AlignRight">6068</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">var</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6091</td>
+<td class="TextItemNum AlignRight">6069</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">l</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">t</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">r</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">b</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">integer</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">6092</td>
+<td class="TextItemNum AlignRight">6070</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">Size</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TSize</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionGap"><td colspan="3">&nbsp;</td></tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">6099</td>
+<td class="TextItemNum AlignRight">6077</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">Result</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">Rect</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">l</span> <span class="TextSegElementOperator">-</span> <span class="TextSegElementNumber">1</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">t</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">r</span> <span class="TextSegElementOperator">+</span> <span class="TextSegElementNumber">2</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">b</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6100</td>
+<td class="TextItemNum AlignRight">6078</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">Down</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementIdentifier">OffsetRect</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Result</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementNumber">1</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementNumber">1</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6101</td>
+<td class="TextItemNum AlignRight">6079</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6102</td>
+<td class="TextItemNum AlignRight">6080</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6103</td>
+<td class="TextItemNum AlignRight">6081</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">procedure</span> <span class="TextSegElementIdentifier">TacBtnWnd</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">DoDrawText</span><span class="TextSegElementOperator">(</span><span class="TextSegElementKeyword">var</span> <span class="TextSegElementIdentifier">Rect</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TRect</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementIdentifier">Flags</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">Integer</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">6104</td>
+<td class="TextItemNum AlignRight">6082</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">6083</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">SkinData</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">FCacheBMP</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Canvas</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Brush</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Style</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">bsClear</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">6105</td>
+<td class="TextItemNum AlignRight">6084</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">acWriteTextEx</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FCacheBMP</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Canvas</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">PacChar</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Caption</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">True</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">Rect</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">Flags</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">CurrentState</span> <span class="TextSegElementOperator">&lt;</span><span class="TextSegElementOperator">&gt;</span> <span class="TextSegElementNumber">0</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6106</td>
+<td class="TextItemNum AlignRight">6085</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6107</td>
+<td class="TextItemNum AlignRight">6086</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6108</td>
+<td class="TextItemNum AlignRight">6087</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">function</span> <span class="TextSegElementIdentifier">TacBtnWnd</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">TextRectSize</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TSize</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">6109</td>
+<td class="TextItemNum AlignRight">6088</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">var</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">6110</td>
+<td class="TextItemNum AlignRight">6089</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">R</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TRect</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionGap"><td colspan="3">&nbsp;</td></tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">7015</td>
+<td class="TextItemNum AlignRight">6998</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7016</td>
+<td class="TextItemNum AlignRight">6999</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7017</td>
+<td class="TextItemNum AlignRight">7000</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">function</span> <span class="TextSegElementIdentifier">TacLinkWnd</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">PaintText</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">boolean</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7018</td>
+<td class="TextItemNum AlignRight">7001</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">var</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7019</td>
+<td class="TextItemNum AlignRight">7002</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">rText</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TRect</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">7020</td>
+<td class="TextItemNum AlignRight">7003</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">Flags</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">Cardinal</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7004</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">f</span> <span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">hFont</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">7021</td>
+<td class="TextItemNum AlignRight">7005</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">s</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">acString</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">7022</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">Old</span>Font : hFont;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7006</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">function</span> <span class="TextSegSigDiff">GetMsg</span>Font : hFont;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7007</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">var</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7008</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; <span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">TNonClientMetricsW</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7009</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7010</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; <span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">cbSize</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">SizeOf</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7011</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; <span class="TextSegSigDiff">if</span> <span class="TextSegSigDiff">SystemParametersInfoW</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">SPI_GETNONCLIENTMETRICS</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">@</span><span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7012</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">then</span> <span class="TextSegSigDiff">Result</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">CreateFontIndirectW</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">NonClientMetrics</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">lfMessageFont</span><span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7013</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">else</span> <span class="TextSegSigDiff">Result</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7014</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">end</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">7023</td>
+<td class="TextItemNum AlignRight">7015</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7024</td>
+<td class="TextItemNum AlignRight">7016</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">Result</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">True</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7025</td>
+<td class="TextItemNum AlignRight">7017</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FCacheBmp</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Canvas</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Brush</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Style</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">bsClear</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">7026</td>
+<td class="TextItemNum AlignRight">7018</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">rText</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">Rect</span><span class="TextSegElementOperator">(</span><span class="TextSegElementNumber">0</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementNumber">0</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">WndSize</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">cx</span> <span class="TextSegElementOperator">+</span> <span class="TextSegElementNumber">4</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">WndSize</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">cy</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">7027</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">OldFont</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">SelectObject</span><span class="TextSegSigDiff">(</span>SkinData.FCacheBmp.Canvas.Handle<span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">ac_GetSysFont</span><span class="TextSegSigDiff">(</span>F<span class="TextSegSigDiff">ONT_MESSAGE</span><span class="TextSegSigDiff">))</span>;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7019</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">f</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">GetMsgFont</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7020</td>
+<td class="TextItemSigDel">&nbsp; SkinData.FCacheBmp.Canvas.<span class="TextSegSigDiff">Font</span><span class="TextSegSigDiff">.</span>Handle <span class="TextSegSigDiff">:=</span> f;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">7028</td>
+<td class="TextItemNum AlignRight">7021</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FCacheBmp</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Canvas</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Font</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Style</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FCacheBmp</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Canvas</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Font</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Style</span> <span class="TextSegElementOperator">+</span> <span class="TextSegElementOperator">[</span><span class="TextSegElementIdentifier">fsUnderline</span><span class="TextSegElementOperator">]</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7029</td>
+<td class="TextItemNum AlignRight">7022</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7030</td>
+<td class="TextItemNum AlignRight">7023</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">Flags</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">DT_LEFT</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementIdentifier">DT_TOP</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementIdentifier">DT_EXPANDTABS</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementIdentifier">DT_WORDBREAK</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementIdentifier">DT_NOCLIP</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7031</td>
+<td class="TextItemNum AlignRight">7024</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">s</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">Caption</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7032</td>
+<td class="TextItemNum AlignRight">7025</td>
+<td class="TextItemSame"><span class="TextSegElementComment">{.$IFNDEF TNTUNICODE}</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">7033</td>
+<td class="TextItemNum AlignRight">7026</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">s</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">ReplaceStr</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">s</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementString">'&lt;A&gt;'</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementString">''</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionGap"><td colspan="3">&nbsp;</td></tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">7037</td>
+<td class="TextItemNum AlignRight">7030</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">acWriteTextEx</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FCacheBmp</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Canvas</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">PacChar</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">s</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">True</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">rText</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">Flags</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">False</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7031</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7032</td>
+<td class="TextItemSame"><span class="TextSegElementComment">{&nbsp; if GetFocus = CtrlHandle then begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7033</td>
+<td class="TextItemSame"><span class="TextSegElementComment">//&nbsp; &nbsp; InflateRect(rText, -1, -1);</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7034</td>
+<td class="TextItemSame"><span class="TextSegElementComment">&nbsp; &nbsp; SkinData.FCacheBmp.Canvas.Pen.Color := clWindowFrame;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7035</td>
+<td class="TextItemSame"><span class="TextSegElementComment">&nbsp; &nbsp; SkinData.FCacheBmp.Canvas.Brush.Color := clBtnFace;</span></td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">7038</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">S</span><span class="TextSegSigDiff">electObject</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">SkinData</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">FCacheBMP</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Canvas</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Handle</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">OldFont</span><span class="TextSegSigDiff">);</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7036</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; DrawFocusRect(SkinData.FCacheBmp.Canvas.Handle, rText);</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7037</td>
+<td class="TextItemSame"><span class="TextSegElementComment">&nbsp; end;}</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7039</td>
+<td class="TextItemNum AlignRight">7038</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7040</td>
+<td class="TextItemNum AlignRight">7039</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7041</td>
+<td class="TextItemNum AlignRight">7040</td>
+<td class="TextItemSame"><span class="TextSegElementComment">{ TacImageWnd }</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7042</td>
+<td class="TextItemNum AlignRight">7041</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">7043</td>
+<td class="TextItemNum AlignRight">7042</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">constructor</span> <span class="TextSegElementIdentifier">TacIconWnd</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Create</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">AHandle</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">hwnd</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementIdentifier">ASkinData</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TsCommonData</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementIdentifier">ASkinManager</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TsSkinManager</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementKeyword">const</span> <span class="TextSegElementIdentifier">SkinSection</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementKeyword">string</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementIdentifier">Repaint</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">boolean</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionGap"><td colspan="3">&nbsp;</td></tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">7068</td>
+<td class="TextItemNum AlignRight">7067</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">else</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7069</td>
+<td class="TextItemNum AlignRight">7068</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">FBmp</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">nil</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7070</td>
+<td class="TextItemNum AlignRight">7069</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; <span class="TextSegElementIdentifier">FBmp</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">TBitmap</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Create</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7071</td>
+<td class="TextItemNum AlignRight">7070</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; <span class="TextSegElementIdentifier">FBmp</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Handle</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">hBitmap</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SendMessage</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">CtrlHandle</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">STM_GETIMAGE</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementIdentifier">IMAGE_BITMAP</span><span class="TextSegElementOperator">,</span> <span class="TextSegElementNumber">0</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7072</td>
+<td class="TextItemNum AlignRight">7071</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">7073</td>
+<td class="TextItemNum AlignRight">7072</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementIdentifier">FBmp</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Empty</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">7074</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">if</span> <span class="TextSegSigDiff">FBmp</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">PixelFormat</span> <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">pf32bit</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7075</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">then</span> <span class="TextSegSigDiff">CopyBmp32</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">Rect</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">WndSize</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">cx</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">WndSize</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">cy</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">Rect</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">FBmp</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Width</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">FBmp</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">Height</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">SkinData</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">FCacheBmp</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">FBmp</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">MakeCacheInfo</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">SkinData</span><span class="TextSegSigDiff">.</span><span class="TextSegSigDiff">FCacheBmp</span><span class="TextSegSigDiff">)</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">True</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">clNone</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">1</span><span class="TextSegSigDiff">,</span> <span class="TextSegSigDiff">True</span><span class="TextSegSigDiff">)</span></td>
+</tr>
+<tr class="SubsectionEnd">
+<td class="TextItemNum AlignRight">7076</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegSigDiff">else</span> BitBlt(SkinData.FCacheBmp.Canvas.Handle, 0, 0, min(WndSize.cx, FBmp.Width), min(WndSize.cy, FBmp.Height), FBmp.Canvas.Handle, 0, 0, SRCCOPY);</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">7073</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; &nbsp; BitBlt(SkinData.FCacheBmp.Canvas.Handle, 0, 0, min(WndSize.cx, FBmp.Width), min(WndSize.cy, FBmp.Height), FBmp.Canvas.Handle, 0, 0, SRCCOPY);</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">7077</td>
+<td class="TextItemNum AlignRight">7074</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; <span class="TextSegElementIdentifier">Result</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">True</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7078</td>
+<td class="TextItemNum AlignRight">7075</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">end</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7079</td>
+<td class="TextItemNum AlignRight">7076</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">else</span> <span class="TextSegElementIdentifier">Result</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">False</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7080</td>
+<td class="TextItemNum AlignRight">7077</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">end</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">7081</td>
+<td class="TextItemNum AlignRight">7078</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">7082</td>
+<td class="TextItemNum AlignRight">7079</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+</table>
+<br/>
+&nbsp; &nbsp;
+<br/>
+File: sCommonData.pas &nbsp;
+<br/>
+<table class="fc" cellspacing="0" cellpadding="0">
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">645</td>
+<td class="TextItemNum AlignRight">645</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">Result</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">False</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">646</td>
+<td class="TextItemNum AlignRight">646</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">with</span> <span class="TextSegElementIdentifier">SkinData</span> <span class="TextSegElementKeyword">do</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">647</td>
+<td class="TextItemNum AlignRight">647</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementIdentifier">Assigned</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">FOwnerControl</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">or</span> <span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">csDestroying</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">FOwnerControl</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">ComponentState</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementIdentifier">Exit</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">648</td>
+<td class="TextItemNum AlignRight">648</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">FOwnerControl</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Enabled</span> <span class="TextSegElementKeyword">and</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">csDesigning</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">FOwnerControl</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">ComponentState</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">649</td>
+<td class="TextItemNum AlignRight">649</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">FFocused</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">650</td>
+<td class="TextItemNum AlignRight">650</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegElementKeyword">then</span> <span class="TextSegElementIdentifier">Result</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">True</span></td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">651</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; &nbsp; &nbsp; else if (FOwnerControl is TWinControl) and TWinControl(<span class="TextSegSigDiff">SkinData</span><span class="TextSegSigDiff">.</span>FOwnerControl).Handle<span class="TextSegSigDiff">All</span>oc<span class="TextSegSigDiff">ated</span> and (TWinControl(FOwnerControl).Handle <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">GetFocus</span>) </td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">651</td>
+<td class="TextItemSigDel">&nbsp; &nbsp; &nbsp; &nbsp; else if (FOwnerControl is TWinControl) and <span class="TextSegSigDiff">((</span>TWinControl(FOwnerControl).Handle <span class="TextSegSigDiff">=</span> <span class="TextSegSigDiff">GetF</span>oc<span class="TextSegSigDiff">us</span><span class="TextSegSigDiff">)</span> and (TWinControl(FOwnerControl).Handle <span class="TextSegSigDiff">&lt;&gt;</span> <span class="TextSegSigDiff">0</span><span class="TextSegSigDiff">)</span>)</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">652</td>
+<td class="TextItemNum AlignRight">652</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegElementKeyword">then</span> <span class="TextSegElementIdentifier">Result</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">FOwnerControl</span> <span class="TextSegElementKeyword">is</span> <span class="TextSegElementIdentifier">TCustomPanel</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">653</td>
+<td class="TextItemNum AlignRight">653</td>
+<td class="TextItemSame">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegElementKeyword">else</span> <span class="TextSegElementKeyword">if</span> <span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">FMouseAbove</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementIdentifier">Result</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">SkinData</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">COC</span> <span class="TextSegElementKeyword">in</span> <span class="TextSegElementIdentifier">sForbidMouse</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">654</td>
+<td class="TextItemNum AlignRight">654</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">655</td>
+<td class="TextItemNum AlignRight">655</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">656</td>
+<td class="TextItemNum AlignRight">656</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">657</td>
+<td class="TextItemNum AlignRight">657</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+</table>
+<br/>
+&nbsp; &nbsp;
+<br/>
+File: acAlphaHints.pas &nbsp;
+<br/>
+<table class="fc" cellspacing="0" cellpadding="0">
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">20</td>
+<td class="TextItemNum AlignRight">20</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">TsAlphaHints</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">class</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">21</td>
+<td class="TextItemNum AlignRight">21</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">TacHintTemplate</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">class</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">22</td>
+<td class="TextItemNum AlignRight">22</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">TacHintTemplates</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">class</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">23</td>
+<td class="TextItemNum AlignRight">23</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">TacCustomHintWindow</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">class</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">24</td>
+<td class="TextItemNum AlignRight">24</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">TacHintImage</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">class</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">25</td>
+<td class="TextItemNum AlignRight">25</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SubsectionAll">
+<td class="TextItemNum AlignRight">26</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">{$IFDEF D200<span class="TextSegSigDiff">9</span>}</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">26</td>
+<td class="TextItemSigDel">{$IFDEF D200<span class="TextSegSigDiff">7</span>}</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">27</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">{$IFNDEF D2007}</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">27</td>
+<td class="TextItemNum AlignRight">28</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">THintInfo</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementIdentifier">Controls</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">THintInfo</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">29</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">{$ENDIF}</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">28</td>
+<td class="TextItemNum AlignRight">30</td>
+<td class="TextItemSame"><span class="TextSegElementCompiler_32Directive">{$ENDIF}</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">29</td>
+<td class="TextItemNum AlignRight">31</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">30</td>
+<td class="TextItemNum AlignRight">32</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">TacShowHintEvent</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">procedure</span> <span class="TextSegElementOperator">(</span><span class="TextSegElementKeyword">var</span> <span class="TextSegElementIdentifier">HintStr</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementKeyword">String</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementKeyword">var</span> <span class="TextSegElementIdentifier">CanShow</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">Boolean</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementKeyword">var</span> <span class="TextSegElementIdentifier">HintInfo</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementCompiler_32Directive">{$IFDEF D2009}</span><span class="TextSegElementIdentifier">Controls</span><span class="TextSegElementOperator">.</span><span class="TextSegElementCompiler_32Directive">{$ENDIF}</span><span class="TextSegElementIdentifier">THintInfo</span><span class="TextSegElementOperator">;</span> <span class="TextSegElementKeyword">var</span> <span class="TextSegElementIdentifier">Frame</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TFrame</span><span class="TextSegElementOperator">)</span> <span class="TextSegElementKeyword">of</span> <span class="TextSegElementKeyword">object</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">31</td>
+<td class="TextItemNum AlignRight">33</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">32</td>
+<td class="TextItemNum AlignRight">34</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">TacBorderDrawModes</span> <span class="TextSegElementOperator">=</span> <span class="TextSegElementKeyword">class</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">TPersistent</span><span class="TextSegElementOperator">)</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">33</td>
+<td class="TextItemNum AlignRight">35</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">private</span></td>
+</tr>
+</table>
+<br/>
+&nbsp; &nbsp;
+<br/>
+File: acThdTimer.pas &nbsp;
+<br/>
+<table class="fc" cellspacing="0" cellpadding="0">
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">35</td>
+<td class="TextItemNum AlignRight">35</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">procedure</span>&nbsp; <span class="TextSegElementIdentifier">KillTimer</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">36</td>
+<td class="TextItemNum AlignRight">36</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">procedure</span>&nbsp; <span class="TextSegElementIdentifier">StartTimer</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">37</td>
+<td class="TextItemNum AlignRight">37</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementCompiler_32Directive">{$IFDEF USE_TIMER}</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">38</td>
+<td class="TextItemNum AlignRight">38</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">Procedure</span>&nbsp; <span class="TextSegElementIdentifier">OnTimer2</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Sender</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TObject</span><span class="TextSegElementOperator">);</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">39</td>
+<td class="TextItemNum AlignRight">39</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementCompiler_32Directive">{$ENDIF}</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">40</td>
+<td class="TextItemNum AlignRight">40</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">protected</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">41</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; <span class="TextSegSigDiff">Executing</span> <span class="TextSegSigDiff">:</span> <span class="TextSegSigDiff">boolean</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">42</td>
+<td class="TextItemNum AlignRight">41</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">FOwner</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TObject</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">43</td>
+<td class="TextItemNum AlignRight">42</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">InHandler</span> <span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">boolean</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">44</td>
+<td class="TextItemNum AlignRight">43</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">procedure</span> <span class="TextSegElementIdentifier">UpdateTimer</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">45</td>
+<td class="TextItemNum AlignRight">44</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">procedure</span> <span class="TextSegElementIdentifier">SetEnabled</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Value</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">Boolean</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">46</td>
+<td class="TextItemNum AlignRight">45</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">procedure</span> <span class="TextSegElementIdentifier">SetInterval</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Value</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">DWord</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">47</td>
+<td class="TextItemNum AlignRight">46</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementKeyword">procedure</span> <span class="TextSegElementIdentifier">SetOnTimer</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Value</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TNotifyEvent</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionGap"><td colspan="3">&nbsp;</td></tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">79</td>
+<td class="TextItemNum AlignRight">78</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">80</td>
+<td class="TextItemNum AlignRight">79</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">81</td>
+<td class="TextItemNum AlignRight">80</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">constructor</span> <span class="TextSegElementIdentifier">TacThreadedTimer</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Create</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">AOwner</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TComponent</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">82</td>
+<td class="TextItemNum AlignRight">81</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">83</td>
+<td class="TextItemNum AlignRight">82</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">inherited</span> <span class="TextSegElementIdentifier">Create</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">AOwner</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">84</td>
+<td class="TextItemNum AlignRight">83</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">FThreadPriority</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">tpNormal</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionAll">
+<td class="TextItemNum AlignRight">85</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">Executing</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">False</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">86</td>
+<td class="TextItemNum AlignRight">84</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">InHandler</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">False</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">87</td>
+<td class="TextItemNum AlignRight">85</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">if</span> <span class="TextSegElementKeyword">not</span> <span class="TextSegElementIdentifier">Application</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">Terminated</span> <span class="TextSegElementKeyword">then</span> <span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">88</td>
+<td class="TextItemNum AlignRight">86</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">FEnabled</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementIdentifier">True</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">89</td>
+<td class="TextItemNum AlignRight">87</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">FInterval</span> <span class="TextSegElementOperator">:=</span> <span class="TextSegElementNumber">1000</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">90</td>
+<td class="TextItemNum AlignRight">88</td>
+<td class="TextItemSame">&nbsp; &nbsp; <span class="TextSegElementIdentifier">StartTimer</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">91</td>
+<td class="TextItemNum AlignRight">89</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionGap"><td colspan="3">&nbsp;</td></tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">211</td>
+<td class="TextItemNum AlignRight">209</td>
+<td class="TextItemSame">&nbsp; <span class="TextSegElementIdentifier">TimeHandler</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">212</td>
+<td class="TextItemNum AlignRight">210</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">213</td>
+<td class="TextItemNum AlignRight">211</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">214</td>
+<td class="TextItemNum AlignRight">212</td>
+<td class="TextItemSame"><span class="TextSegElementCompiler_32Directive">{$IFDEF USE_TIMER}</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">215</td>
+<td class="TextItemNum AlignRight">213</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">procedure</span> <span class="TextSegElementIdentifier">TacThreadedTimer</span><span class="TextSegElementOperator">.</span><span class="TextSegElementIdentifier">OnTimer2</span><span class="TextSegElementOperator">(</span><span class="TextSegElementIdentifier">Sender</span><span class="TextSegElementOperator">:</span> <span class="TextSegElementIdentifier">TObject</span><span class="TextSegElementOperator">)</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">216</td>
+<td class="TextItemNum AlignRight">214</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">begin</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">217</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">if</span> TTim<span class="TextSegSigDiff">er</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">Sende</span>r).Enabled <span class="TextSegSigDiff">and</span> <span class="TextSegSigDiff">not</span> E<span class="TextSegSigDiff">xecuting</span> <span class="TextSegSigDiff">then</span> <span class="TextSegSigDiff">begin</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">218</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; <span class="TextSegSigDiff">Executing</span> <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">True</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">219</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; TacThreaded<span class="TextSegSigDiff">Timer</span><span class="TextSegSigDiff">(</span>T<span class="TextSegSigDiff">T</span>im<span class="TextSegSigDiff">er</span><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">Sender</span><span class="TextSegSigDiff">).</span><span class="TextSegSigDiff">Own</span>er).Timer;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">220</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; &nbsp; <span class="TextSegSigDiff">Ex</span><span class="TextSegSigDiff">ecuting</span> := <span class="TextSegSigDiff">Fals</span>e;</td>
+</tr>
+<tr class="SubsectionEnd">
+<td class="TextItemNum AlignRight">221</td>
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemSigAdd">&nbsp; <span class="TextSegSigDiff">end</span><span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">215</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">Sender</span> <span class="TextSegSigDiff">as</span> TTim<span class="TextSegSigDiff">e</span>r).Enabled <span class="TextSegSigDiff">:=</span> <span class="TextSegSigDiff">Fals</span>e<span class="TextSegSigDiff">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">216</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">((</span><span class="TextSegSigDiff">Sender</span> <span class="TextSegSigDiff">as</span> <span class="TextSegSigDiff">TTimer</span><span class="TextSegSigDiff">).</span><span class="TextSegSigDiff">Owner</span> <span class="TextSegSigDiff">as</span> TacThreadedTimer).Timer;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">&nbsp;</td>
+<td class="TextItemNum AlignRight">217</td>
+<td class="TextItemSigDel">&nbsp; <span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">Sender</span> <span class="TextSegSigDiff">as</span> <span class="TextSegSigDiff">TTimer</span><span class="TextSegSigDiff">).</span><span class="TextSegSigDiff">E</span><span class="TextSegSigDiff">nabled</span> := <span class="TextSegSigDiff">Tru</span>e;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextItemNum AlignRight">222</td>
+<td class="TextItemNum AlignRight">218</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">223</td>
+<td class="TextItemNum AlignRight">219</td>
+<td class="TextItemSame"><span class="TextSegElementCompiler_32Directive">{$ENDIF}</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextItemNum AlignRight">224</td>
+<td class="TextItemNum AlignRight">220</td>
+<td class="TextItemSame">&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextItemNum AlignRight">225</td>
+<td class="TextItemNum AlignRight">221</td>
+<td class="TextItemSame"><span class="TextSegElementKeyword">end</span><span class="TextSegElementOperator">.</span></td>
+</tr>
+</table>
+<br/>
+</body>
+</html>

@@ -1,0 +1,30 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = fmxFile_Client.exe \
+           fmxAppClient.exe \
+           fmxAppServer.exe \
+           fmxFishFactClient.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+fmxFile_Client.exe: File_Client\fmxFile_Client.dpr
+  $(DCC)
+
+fmxAppClient.exe: App_Client\fmxAppClient.dpr
+  $(DCC)
+
+fmxAppServer.exe: App_Server\fmxAppServer.dpr
+  $(DCC)
+
+fmxFishFactClient.exe: DB_Access\fmxFishFactClient.dpr
+  $(DCC)

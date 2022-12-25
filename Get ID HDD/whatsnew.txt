@@ -1,0 +1,21 @@
+****************************************************************************
+TGetDiskSerial for Borland Delphi
+Version 3.0.0
+Copyright (c) 2002-2006 Devlib,Inc. 
+Website : http://www.devlib.net
+Support E-Mail : support@devlib.net
+****************************************************************************
+
+TGetDiskSerial 3.0.0
+  - Added the support for not require administrator rights in Win NT/2000/XP
+  - Improved the stability with Windows 98.
+
+TGetDiskSerial 2.7
+  - support Delphi 2006 (Delphi 10)
+
+TGetDiskSerial 2.6
+  - support Delphi 5, 6, 7 now
+  - fix bug for sata harddisk
+
+for more information please visit :
+  http://www.devlib.net/

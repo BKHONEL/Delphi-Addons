@@ -1,0 +1,375 @@
+unit sMaskEdit;
+{$I sDefs.inc}
+{.$DEFINE LOGGED}
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs{$IFNDEF DELPHI5}, types{$ENDIF},
+  StdCtrls, Mask, sCommonData, sConst, sDefaults{$IFDEF LOGGED}, sDebugMsgs{$ENDIF};
+
+type
+
+  TsMaskEdit = class(TMaskEdit)
+{$IFNDEF NOTFORHELP}
+  private
+    FCommonData: TsCtrlSkinData;
+    FDisabledKind: TsDisabledKind;
+    FBoundLabel: TsBoundLabel;
+    procedure SetDisabledKind(const Value: TsDisabledKind);
+  protected
+    procedure SetEditRect; virtual;
+    procedure Change; override;
+    procedure PaintBorder(DC : hdc); virtual;
+    function PrepareCache : boolean; virtual;
+    procedure PaintText; virtual;
+    procedure OurPaintHandler(aDC : hdc = 0); virtual;
+    procedure ExcludeChildControls(DC : hdc); virtual;
+    function IsActive : boolean; virtual;
+    function BorderWidth : integer;
+  public
+    procedure AfterConstruction; override;
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    procedure Loaded; override;
+    procedure WndProc (var Message: TMessage); override;
+  published
+    property Align;
+{$ENDIF} // NOTFORHELP
+    property BoundLabel : TsBoundLabel read FBoundLabel write FBoundLabel;
+    property DisabledKind : TsDisabledKind read FDisabledKind write SetDisabledKind default DefDisabledKind;
+    property SkinData : TsCtrlSkinData read FCommonData write FCommonData;
+{$IFDEF D2005}
+    property OnMouseActivate;
+{$ENDIF}
+{$IFDEF D2009}
+    property TextHint;
+    property ParentDoubleBuffered;
+    property OnMouseEnter;
+    property OnMouseLeave;
+{$ENDIF}
+{$IFDEF D2010}
+    property Touch;
+    property OnGesture;
+{$ENDIF}
+  end;
+
+implementation
+
+uses sVCLUtils, sMessages, acntUtils, sGraphUtils, sAlphaGraph, sMaskData, sSkinProps, sSkinManager;
+
+{ TsMaskEdit }
+
+procedure TsMaskEdit.AfterConstruction;
+begin
+  inherited AfterConstruction;
+  FCommonData.Loaded;
+end;
+
+constructor TsMaskEdit.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  ControlStyle := ControlStyle - [csSetCaption];
+  FCommonData := TsCtrlSkinData.Create(Self, True);
+  FCommonData.COC := COC_TsEdit;
+  if FCommonData.SkinSection = '' then FCommonData.SkinSection := s_Edit;
+  FDisabledKind := DefDisabledKind;
+  FBoundLabel := TsBoundLabel.Create(Self, FCommonData);
+end;
+
+destructor TsMaskEdit.Destroy;
+begin
+  FreeAndNil(FBoundLabel);
+  if Assigned(FCommonData) then FreeAndNil(FCommonData);
+  inherited Destroy;
+end;
+
+function TsMaskEdit.IsActive: boolean;
+begin
+  Result := ControlIsActive(FCommonData);
+end;
+
+procedure TsMaskEdit.Loaded;
+begin
+  inherited Loaded;
+  FCommonData.Loaded;
+end;
+
+procedure TsMaskEdit.OurPaintHandler(aDC : hdc = 0);
+var
+  DC, SavedDC : hdc;
+  PS : TPaintStruct;
+begin
+  if not InAnimationProcess then BeginPaint(Handle, PS);
+  SavedDC := 0;
+  if aDC = 0 then begin
+    DC := GetWindowDC(Handle);
+    SavedDC := SaveDC(DC);
+  end
+  else DC := aDC;
+  try
+    if not InUpdating(FCommonData) then begin
+      FCommonData.BGChanged := FCommonData.BGChanged or FCommonData.HalfVisible or GetBoolMsg(Parent, AC_GETHALFVISIBLE);
+      FCommonData.HalfVisible := not RectInRect(Parent.ClientRect, BoundsRect);
+      if FCommonData.BGChanged then if not PrepareCache then begin
+        if aDC = 0 then begin
+          RestoreDC(DC, SavedDC);
+          ReleaseDC(Handle, DC);
+        end;
+        if not InAnimationProcess then EndPaint(Handle, PS);
+        FCommonData.FUpdating := True;
+        Exit;
+      end;
+      UpdateCorners(FCommonData, 0);
+      ExcludeChildControls(DC);
+      BitBlt(DC, 0, 0, Width, Height, FCommonData.FCacheBmp.Canvas.Handle, 0, 0, SRCCOPY);
+    end;
+  finally
+    if aDC = 0 then begin
+      RestoreDC(DC, SavedDC);
+      ReleaseDC(Handle, DC);
+    end;
+    if not InAnimationProcess then EndPaint(Handle, PS);
+  end;
+end;
+
+procedure TsMaskEdit.PaintBorder(DC : hdc);
+const
+  BordWidth = 2;
+var
+  NewDC, SavedDC: HDC;
+begin
+  if not Assigned(Parent) or not Visible or not Parent.Visible or (csCreating in ControlState) or (BorderStyle = bsNone) then exit;
+  if SkinData.Updating then Exit;
+  if DC = 0 then NewDC := GetWindowDC(Handle) else NewDC := DC;
+  SavedDC := SaveDC(NewDC);
+  try
+    if FCommonData.BGChanged then PrepareCache;
+    UpdateCorners(FCommonData, 0);
+    BitBltBorder(NewDC, 0, 0, Width, Height, FCommonData.FCacheBmp.Canvas.Handle, 0, 0, BordWidth);
+  finally
+    RestoreDC(NewDC, SavedDC);
+    if DC = 0 then ReleaseDC(Handle, NewDC);
+  end;
+end;
+
+procedure TsMaskEdit.PaintText;
+var
+  R : TRect;
+  aText : acString;
+  bw : integer;
+begin
+  aText := EditText;
+  if aText = '' then Exit;
+
+  FCommonData.FCacheBMP.Canvas.Font.Assign(Font);
+  bw := BorderWidth;
+
+  R := Rect(bw, bw, Width - bw, bw + acTextHeight(FCommonData.FCacheBMP.Canvas, aText) + 2);
+
+  if PasswordChar = #0 then begin
+    acWriteTextEx(FCommonData.FCacheBMP.Canvas, PacChar(aText), True, R, DT_NOPREFIX or DT_TOP or DT_EXTERNALLEADING or GetStringFlags(Self, {$IFDEF D2009}Alignment{$ELSE}taLeftJustify{$ENDIF}), FCommonData, IsActive);
+  end
+  else begin
+    acFillString(aText, Length(aText), acChar(PasswordChar));
+    acWriteTextEx(FCommonData.FCacheBMP.Canvas, PacChar(aText), True, R, DT_NOPREFIX or DT_TOP or GetStringFlags(Self, {$IFDEF D2009}Alignment{$ELSE}taLeftJustify{$ENDIF}), FCommonData, IsActive);
+  end;
+end;
+
+function TsMaskEdit.PrepareCache : boolean;
+var
+  BGInfo : TacBGInfo;
+begin
+  Result := False;
+  BGInfo.BgType := btUnknown;
+  GetBGInfo(@BGInfo, Parent);
+  if BGInfo.BgType = btNotReady then Exit;
+  InitCacheBmp(SkinData);
+  if SkinData.Skinned then
+    begin
+      if BorderStyle = bsSingle
+        then PaintItem(FCommonData, BGInfoToCI(@BGInfo), True, integer(IsActive), Rect(0, 0, Width, Height), Point(Left, top), FCommonData.FCacheBmp, False)
+        else PaintItemBG(FCommonData, BGInfoToCI(@BGInfo), 0, Rect(0, 0, Width, Height), Point(Left, top), FCommonData.FCacheBmp, 0, 0);
+      PaintText;
+      if not Enabled then
+        BmpDisabledKind(FCommonData.FCacheBmp, FDisabledKind, Parent, BGInfoToCI(@BGInfo), Point(Left, Top));
+      SkinData.BGChanged := False;
+    end
+  else
+    begin
+      FillDC(FCommonData.FCacheBmp.Canvas.Handle, Rect(0, 0, Width, Height), Color);
+      PaintText;
+    end;
+  Result := True;
+end;
+
+procedure TsMaskEdit.SetDisabledKind(const Value: TsDisabledKind);
+begin
+  if FDisabledKind <> Value then begin
+    FDisabledKind := Value;
+    FCommonData.Invalidate;
+  end;
+end;
+
+procedure TsMaskEdit.WndProc(var Message: TMessage);
+var
+  DC, SavedDC : hdc;
+  i, bw : integer;
+  PS : TPaintStruct;
+begin
+{$IFDEF LOGGED}
+  AddToLog(Message);
+{$ENDIF}
+  if Message.Msg = SM_ALPHACMD then case Message.WParamHi of
+    AC_CTRLHANDLED : begin Message.Result := 1; Exit end; // AlphaSkins supported
+    AC_GETAPPLICATION : begin Message.Result := LRESULT(Application); Exit end;
+    AC_SETNEWSKIN : if (ACUInt(Message.LParam) = ACUInt(SkinData.SkinManager)) then begin
+      CommonWndProc(Message, FCommonData);
+      exit
+    end;
+    AC_REFRESH : if (ACUInt(Message.LParam) = ACUInt(SkinData.SkinManager)) then begin
+      CommonWndProc(Message, FCommonData);
+      if HandleAllocated then SendMessage(Handle, WM_NCPaint, 0, 0);
+      Repaint;
+      exit
+    end;
+    AC_REMOVESKIN : if (ACUInt(Message.LParam) = ACUInt(SkinData.SkinManager)) then begin
+      CommonWndProc(Message, FCommonData);
+      Invalidate;
+      exit
+    end;
+    AC_ENDPARENTUPDATE : if FCommonData.Updating then begin
+      FCommonData.Updating := False;
+      InvalidateRect(Handle, nil, True);
+      SendMessage(Handle, WM_NCPAINT, 0, 0);
+      Exit
+    End;
+  end;
+  if (FCommonData = nil) or not FCommonData.Skinned or not ControlIsReady(Self) then begin
+    case Message.Msg of
+      WM_PAINT : begin
+        if not Focused then begin
+          bw := 0;
+          for i := 0 to ControlCount - 1 do if Controls[i] is TGraphicControl then begin
+            bw := 1;
+            Break;
+          end;                                          
+          if bw <> 0 then begin
+            BeginPaint(Handle, PS);
+            for i := 0 to ControlCount - 1 do begin
+              if Controls[i] is TGraphicControl then begin
+                PrepareCache;
+                bw := integer(BorderStyle <> bsNone) * 2;
+
+                SavedDC := SaveDC(SkinData.FCacheBmp.Canvas.Handle);
+                MoveWindowOrg(SkinData.FCacheBmp.Canvas.Handle, Controls[i].Left + bw, Controls[i].Top + bw);
+                TGraphicControl(Controls[i]).Perform(WM_PAINT, WPARAM(SkinData.FCacheBmp.Canvas.Handle), 0);
+                RestoreDC(SkinData.FCacheBmp.Canvas.Handle, SavedDC);
+              end;
+            end;
+            DC := GetWindowDC(Handle);
+            BitBlt(DC, bw, bw, SkinData.FCacheBmp.Width - 2 * bw, SkinData.FCacheBmp.Height - 2 * bw, SkinData.FCacheBmp.Canvas.Handle, bw, bw, SRCCOPY);
+            ReleaseDC(Handle, DC);
+            EndPaint(Handle, PS);
+          end
+          else inherited;
+        end
+        else inherited;
+      end
+      else inherited
+    end;
+  end
+  else begin
+    case Message.Msg of
+      WM_ERASEBKGND, CN_DRAWITEM : begin
+        if InAnimationProcess then Exit;
+        SkinData.Updating := SkinData.Updating;
+        if SkinData.Updating then Exit;
+        inherited;
+        Exit;
+      end;
+      WM_NCPAINT : begin
+        if InAnimationProcess then Exit;
+        FCommonData.FUpdating := FCommonData.Updating;
+        if FCommonData.FUpdating then Exit;
+        DC := GetWindowDC(Handle);
+        SavedDC := SaveDC(DC);
+        try
+          PaintBorder(DC);
+        finally
+          RestoreDC(DC, SavedDC);
+          ReleaseDC(Handle, DC);
+        end;
+        Exit;
+      end;
+      WM_PRINT : begin
+        SkinData.Updating := False;
+        DC := TWMPaint(Message).DC;
+        if SkinData.BGChanged then PrepareCache;
+        UpdateCorners(SkinData, 0);
+
+        bw := BorderWidth;
+        OurPaintHandler(DC);
+        BitBltBorder(DC, 0, 0, SkinData.FCacheBmp.Width, SkinData.FCacheBmp.Height, SkinData.FCacheBmp.Canvas.Handle, 0, 0, bw);
+        Exit;
+      end;
+      WM_PAINT : begin
+        if not Focused {ControlIsActive(SkinData) }then begin
+          OurPaintHandler(TWMPaint(Message).DC);
+        end
+        else begin
+          inherited;
+          PaintBorder(0);
+        end;
+        Exit;
+      end;
+      CM_COLORCHANGED, CM_CHANGED : FCommonData.BGChanged := True;
+      WM_SETTEXT : if (csDesigning in ComponentState) then FCommonData.BGChanged := True;
+    end;
+    CommonWndProc(Message, FCommonData);
+    inherited;
+    case Message.Msg of
+      CM_VISIBLECHANGED, CM_ENABLEDCHANGED, WM_SETFONT : FCommonData.Invalidate;
+{      WM_SETFOCUS : begin
+        Invalidate;
+      end}
+    end;
+  end;
+  // Aligning of the bound label
+  if Assigned(BoundLabel) and Assigned(BoundLabel.FtheLabel) then case Message.Msg of
+    WM_SIZE, WM_WINDOWPOSCHANGED : begin BoundLabel.AlignLabel end;
+    CM_VISIBLECHANGED : begin BoundLabel.FtheLabel.Visible := Visible; BoundLabel.AlignLabel end;
+    CM_ENABLEDCHANGED : begin BoundLabel.FtheLabel.Enabled := Enabled or not (dkBlended in DisabledKind); BoundLabel.AlignLabel end;
+    CM_BIDIMODECHANGED : begin BoundLabel.FtheLabel.BiDiMode := BiDiMode; BoundLabel.AlignLabel end;
+  end;
+end;
+
+procedure TsMaskEdit.Change;
+begin
+  if not (csLoading in ComponentState) then begin
+    inherited;
+  end;
+end;
+
+procedure TsMaskEdit.SetEditRect;
+begin
+//
+end;
+
+function TsMaskEdit.BorderWidth: integer;
+begin
+  Result := integer(BorderStyle <> bsNone) * (2 + integer(Ctl3d));
+end;
+
+procedure TsMaskEdit.ExcludeChildControls;
+var
+  i, bw : integer;
+begin
+  if ControlCount <> 0 then begin
+    bw := integer(BorderStyle <> bsNone) * (2 + integer(Ctl3d)) - 1;
+    for i := 0 to ControlCount - 1 do
+      ExcludeClipRect(DC, Controls[i].Left + bw, Controls[i].Top + bw, Controls[i].BoundsRect.Right + bw, Controls[i].BoundsRect.Bottom + bw);
+  end;
+end;
+
+end.

@@ -1,0 +1,16 @@
+For Delphi 5, 6, 7, 2005-XE4:
+
+ - open sed*.dpk file
+ - install package
+
+For C++Builder 5, 6:
+
+ - open secb*.bpk file
+ - install package
+
+For C++Builder 2006-2010-XE4:
+
+ - open secb*.bdsproj file
+ - install package
+
+

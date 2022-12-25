@@ -1,0 +1,28 @@
+If you find any problems during installation write us to:
+ support@devlib.net
+
+The latest version of TGetDiskSerial can be downloaded from our web site:
+ http://www.devlib.net
+
+If you have any previous version of TGetDiskSerial, uninstall it first.
+
+
+Installation in Delphi
+==============================================================
+
+1. Run Delphi
+
+2. Select the File->Open Project menu option.
+
+3. Select the .dpk file in \TGetDiskSerial\delphiX path(X is delphi version,
+   such as 5 or 6 or 7 or 10)
+
+4. Press "Install" button.
+
+5. After you have installed package please make sure you've 
+   added folder with the package files(\TGetDiskSerial\delphiX) to your 
+   Delphi's library path setting.
+
+
+Please go to this url to get more information:
+http://www.devlib.net

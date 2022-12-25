@@ -1,0 +1,160 @@
+
+SOFTWARE LICENSE AGREEMENT
+
+NOTICE---READ BEFORE USING THIS SOFTWARE
+
+CAREFULLY READ THE TERMS AND CONDITIONS OF THIS AGREEMENT BEFORE USING THIS
+PACKAGE, USING THIS PACKAGE INDICATES YOUR ACCEPTANCE OF THESE TERMS AND
+CONDITIONS.  
+
+DEFINITIONS:  
+
+The Software Product.  The Software Product licensed under this Agreement
+consists of computer programs, data compilation(s), and documentation referred
+to as TGetDiskSerial for Delphi (the "Software Product").
+
+The Software Product is licensed (not sold) to You, and Devlib,Inc. ("Vendor") owns 
+all copyright, trade secret, patent and other proprietary rights in the 
+Software Product.
+
+LICENSE:
+
+     1.  Evaluation Version License Grant.  If You have downloaded or
+otherwise received an evaluation version of the Software Product, You are
+authorized to use the Software Product on a royalty-free basis for evaluation
+purposes during the initial evaluation period of thirty (30) days.  During the
+evaluation period, You may copy the Software Product for archival purposes,
+provided that any copy must contain the original Software Product's
+proprietary notices in unaltered form, and You may distribute and/or transmit
+as many copies to others as You wish.  You have the option to register for
+full use of the Software Product at any time during the evaluation period by
+following the instructions in the accompanying documentation, including the
+payment of the required license fee.  Your use of the Software Product for any
+purpose after the expiration of the initial evaluation period is not
+authorized.
+     
+     2.  Registered Version License Grant For Single Copies (Non-Network Use).
+If You are a registered user of the Software Product, You are granted
+non-exclusive rights to install and use the Software Product in accordance
+with either one of the following authorized uses, but not both: (i) by a
+single person who uses the Software Product only on one or  more computers or
+workstations, or (ii) as installed on any single computer or workstation,
+provided the single computer or workstation is used non-simultaneously by
+multiple persons. You may copy the Software Product for archival purposes,
+provided that any copy must contain the original Software Product's
+proprietary notices in unaltered form.
+
+     3.  Registered Version License Grant For Network Use.  If You are a
+registered user of the Software Product, You are granted non-exclusive rights
+to install and use the Software Product and/or transmit the Software Product
+over an internal computer network, provided You acquire and dedicate a
+licensed copy of the Software Product for each user who may access the
+Software Product concurrently with any other user.  If a copy of the Software
+Product is used concurrently, then You must have some software mechanism which
+locks out any concurrent users in excess of the number of licensed copies of
+the Software Product.  You may copy the Software Product for archival
+purposes, provided that any copy must contain the original Software Product's
+proprietary notices in unaltered form.
+
+     4.  Purchase of Additional Licenses.  Registered users of the Software
+Product may purchase license rights for additional authorized use of the
+Software Product in accordance with Vendor's then-current volume pricing
+schedule.  Such additional licenses shall be governed by the terms and
+conditions hereof.  You agree that, absent Vendor's express written acceptance
+thereof, the terms and conditions contained in any purchase order or other
+document issued by You to Vendor for the purchase of additional licenses,
+shall not be binding on Vendor to the extent that such terms and conditions
+are additional to or inconsistent with those contained in this Agreement.
+
+RESTRICTIONS:
+
+You may not: (i) permit others to use the Software Product, except as
+expressly provided above for authorized network use; (ii) modify the Software
+Product; (iii) copy the Software Product, except as expressly provided above;
+or (iv) remove or obscure any proprietary rights notices or labels on the
+Software Product.
+
+TRANSFERS:
+
+You may not transfer the Software Product or any rights under this Agreement
+without the prior written consent of Vendor, which consent shall not be
+unreasonably withheld.  A condition to any transfer or assignment shall be
+that the recipient agrees to the terms of this Agreement.  Any attempted
+transfer or assignment in violation of this provision shall be null and void.
+
+LIMITED SOFTWARE PRODUCT WARRANTY:
+
+Vendor does not warrant the contents of the Software Product or that it will
+be error free.  The Software Product is furnished "AS IS" and without warranty
+as to the performance or results You may obtain by using the Software Product.
+The entire risk as to the results and performance of the Software Product is
+assumed by You.
+
+SPECIFIC EXCLUSION OF OTHER WARRANTIES:
+
+The warranty provided above is in lieu of all other warranties, and there are
+no other warranties, representations or guarantees of any kind whatsoever,
+either express or implied, whether arising by statute, agreement, tort,
+product liability or otherwise, regarding the Software Product, or any other
+materials to be supplied by Vendor, including warranties as to
+merchantability, fitness for purpose, design, condition or quality.
+
+NO CONSEQUENTIAL LOSS:
+
+In no event will Vendor or its third party suppliers be liable to You for lost
+profits, lost savings or any punitive, exemplary, incidental, consequential or
+special damages arising out of the possession or use of the Software Product,
+or any other materials to be supplied hereunder.
+
+LIMITATION OF DAMAGES:
+
+If, despite the foregoing, for any reason Vendor becomes liable to You,
+Vendor's liability will be limited to the amounts paid by You to Vendor for
+those units of Software Product licensed which have given rise to such
+liability.
+
+PERMITS:
+
+You are exclusively responsible for obtaining any approvals, permits, licenses
+or other permissions necessary for You to export, import, possess, install,
+use or operate the Software Product in a territory, unless otherwise agreed to
+in writing by Vendor.  This includes, but is not limited to, in the case of
+telecommunications products, obtaining applicable licenses from any
+telecommunications agencies, authorities or companies having jurisdiction
+before installing, interfacing, interconnecting or operating the Software
+Product.
+
+EXCLUSIONS:
+
+The Software Product is not specifically designed, manufactured or intended
+for use as parts, components or assemblies for the planning, construction,
+maintenance, operation or use of any nuclear facility nor for the flight
+safety or navigation of aircraft or ground support equipment, nor for use in
+any medical device or life-sustaining application.  If You are using the
+Software Product for these applications You agree that, the Vendor is not
+liable, in whole or in part, for any claims or damages arising from such use
+and You agree to indemnify and hold Vendor harmless from any claims for lost,
+cost, damage, expense or liability arising out of or in connection with the
+use and performance of the Software Product in such excluded applications.
+
+TERMINATION:
+
+This Agreement is effective until terminated. You may terminate it at any time
+by destroying the Software Product, including all computer programs and
+documentation, and erasing any copies residing on computer equipment.  This
+Agreement also will terminate if You do not comply with any terms or
+conditions of this agreement.  Upon such termination You agree to destroy the
+Software Product and erase all copies residing on computer equipment.
+
+ENTIRE AGREEMENT:
+
+This Agreement constitutes the entire Agreement between the parties as to the
+subject matter hereof, and supersedes and replaces all prior or
+contemporaneous agreements, written or oral, regarding such subject matter,
+and shall take precedence over any additional or conflicting terms which may be
+contained in Your purchase orders or Vendor's acknowledgement thereof.
+
+Copyright (c) 2002-2006 Devlib,Inc. All Rights Reserved
+
+Devlib
+http://www.devlib.net
